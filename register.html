@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>Create Account</title>
+  </head>
+
+  <body class="bg-gray-300 min-h-screen flex items-center justify-center">
+    <!-- Card utama -->
+    <div
+      class="bg-white w-[1100px] h-[600px] rounded-3xl flex overflow-hidden shadow-lg"
+    >
+      <!-- KIRI : FORM -->
+      <div class="w-1/2 p-12 flex flex-col">
+        <!-- Kembali -->
+        <a
+          href="index.html"
+          class="flex items-center text-gray-600 mb-10 hover:text-gray-900"
+        >
+          <svg
+            class="w-5 h-5 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+          Kembali
+        </a>
+
+        <!-- Form -->
+        <form class="space-y-5">
+          <div>
+            <label class="block text-sm mb-1">Username</label>
+            <input
+              type="text"
+              class="w-full h-10 rounded-lg bg-gray-100 px-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm mb-1">Email</label>
+            <input
+              type="email"
+              class="w-full h-10 rounded-lg bg-gray-100 px-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm mb-1">Kata Sandi</label>
+            <input
+              type="password"
+              class="w-full h-10 rounded-lg bg-gray-100 px-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm mb-1">Konfirmasi Kata Sandi</label>
+            <input
+              type="password"
+              class="w-full h-10 rounded-lg bg-gray-100 px-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full h-11 mt-6 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition"
+          >
+            Daftar
+          </button>
+        </form>
+      </div>
+
+      <!-- KANAN : GAMBAR -->
+      <div class="w-1/2 bg-gray-400 flex items-center justify-center">
+        <img
+          src="./img/pict register.jpg"
+          alt="Register Illustration"
+          class="w-[420px] max-w-full object-contain"
+        />
+      </div>
+    </div>
+  </body>
+</html>
