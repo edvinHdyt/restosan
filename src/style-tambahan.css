@@ -1,0 +1,171 @@
+
+
+/* 1. Font Style*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Override Default Body */
+body {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: #fffbeb !important; /* Latar belakang agak kekuningan (Amber-50) biar hangat */
+    color: var(--color-gray-800) !important;
+}
+
+/* 2. NAVBAR: Glassmorphism & Aksen Warna */
+nav {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-amber-500) !important; /* Garis bawah warna Amber */
+}
+
+nav a.font-bold {
+    color: var(--color-amber-600) !important; /* Logo teks jadi oranye */
+    font-size: 1.75rem !important;
+    letter-spacing: -0.5px;
+}
+
+/* 3. HERO SECTION */
+main > div:first-child {
+    background: linear-gradient(135deg, var(--color-amber-500), #f59e0b) !important;
+    border: none !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px -5px rgba(245, 158, 11, 0.4);
+}
+
+main > div:first-child::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+main > div:first-child svg {
+    color: white !important; 
+    opacity: 0.9;
+    transform: scale(1.2);
+}
+
+/* 4. SEARCH BAR */
+input[placeholder="Search"] {
+    background-color: white !important;
+    border: 2px solid transparent !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease;
+}
+
+input[placeholder="Search"]:focus {
+    border-color: var(--color-amber-500) !important;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2) !important;
+}
+
+/* 5. TOMBOL FILTER */
+/* Tombol-tombol kecil di bawah search */
+button.rounded-full, 
+#kotaBtn,
+button.border-gray-300 {
+    border-color: var(--color-amber-500) !important;
+    color: var(--color-amber-600) !important;
+    background: white !important;
+    transition: 0.3s;
+}
+
+button.rounded-full:hover,
+#kotaBtn:hover {
+    background-color: var(--color-amber-500) !important;
+    color: white !important;
+}
+
+/* 6. KARTU RESTORAN (Card) */
+.grid > div {
+    background-color: white !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek saat mouse diarahkan ke kartu */
+.grid > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    border-color: var(--color-amber-500) !important;
+}
+
+/* Kotak Gambar Placeholder di dalam kartu */
+.grid > div > div:first-child {
+    background-color: #fef3c7 !important; /* Amber-100 */
+    color: var(--color-amber-500) !important; /* Warna Ikon Gambar */
+}
+
+/* Tombol "Lihat Detail" di dalam kartu */
+.grid > div div.bg-\[\#797979\] {
+    background-color: var(--color-amber-500) !important; /* Ganti abu-abu jadi Amber */
+    color: white !important;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(245, 158, 11, 0.3);
+}
+
+.grid > div div.bg-\[\#797979\]:hover {
+    background-color: var(--color-amber-600) !important;
+}
+
+/* 7. CONTACT US SECTION */
+#contact-us {
+    background: linear-gradient(to right, #1f2937, #111827) !important; /* Dark Grey Gradient */
+    color: white !important;
+    width: 100% !important; /* Memperbaiki width fixed */
+    max-width: 100% !important;
+    height: auto !important;
+    padding-bottom: 3rem;
+}
+
+#contact-us .text-black {
+    color: var(--color-amber-500) !important; /* Judul jadi Oranye */
+}
+
+#contact-us input,
+#contact-us textarea {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+}
+
+#contact-us input:focus,
+#contact-us textarea:focus {
+    border-color: var(--color-amber-500) !important;
+    outline: none;
+}
+
+#contact-us button {
+    background-color: var(--color-amber-500) !important;
+    color: white !important;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+#contact-us button:hover {
+    background-color: var(--color-amber-600) !important;
+    transform: scale(1.05);
+}
+
+/* 8. FOOTER */
+footer div.bg-gray-100 {
+    background-color: #292524 !important; /* Coklat Gelap (Warm Dark) */
+    color: #d6d3d1 !important;
+    border-top: none !important;
+}
+
+/* Ikon sosmed di footer */
+footer .rounded-full {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+}
+
+footer .rounded-full:hover {
+    background-color: var(--color-amber-500) !important;
+    color: white !important;
+}
