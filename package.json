@@ -14,6 +14,7 @@
   "keywords": [],
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
+    "sweetalert2": "^11.26.10",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
