@@ -1,73 +1,520 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./src/output.css" rel="stylesheet" />
-    <title>Restosan Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restosan - Restaurant Detail</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font dan Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Poppins -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+    </style>
 </head>
-<body>
-    <!-- navbar -->
-    <nav class="border-b border-gray-200 sticky top-0 bg-white z-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex-shrink-0">
-            <a href="#" class="text-2xl font-bold text-gray-800">Restosan</a>
-          </div>
-          <div class="relative w-96">
-        <div
-          class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-        >
-          <svg
-            class="h-5 w-5 text-gray-400"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </div>
-        <input
-          type="text"
-          class="block w-full pl-10 pr-3 py-4 border-none rounded-md leading-5 bg-gray-50 text-gray-900 placeholder-gray-500 focus:outline-none focus:bg-gray-100 focus:ring-0 sm:text-sm"
-          placeholder="Search"
-        />
-      </div>
-          <div class="flex items-center space-x-8">
-            <a href="#" class="text-gray-600 hover:text-gray-900 font-medium"
-              >Dashboard</a
-            >
-            <a href="/index.html" class="text-gray-600 hover:text-gray-900 font-medium"
-              >Contact Us</a
-            >
 
-            <button
-              class="bg-gray-500 hover:bg-gray-600 text-white rounded-full p-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-            >
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                />
-              </svg>
+<body class="bg-slate-50 text-gray-700">
+
+    <!-- Header -->
+    <header class="w-full bg-gradient-to-r from-orange-500 to-rose-600 shadow-xl rounded-b-[40px] mb-8 md:mb-12 relative overflow-hidden">
+        <div class="absolute top-[-50%] left-[-10%] w-64 h-64 md:w-96 md:h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-[-50%] right-[-10%] w-64 h-64 md:w-96 md:h-96 bg-yellow-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 py-6 md:py-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-white text-orange-600 rounded-full flex items-center justify-center shadow-lg text-lg md:text-xl transform hover:rotate-12 transition-transform duration-300">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <span class="text-xl md:text-2xl font-extrabold text-white tracking-wide">Restosan</span>
+                </div>
+
+                <div class="relative w-full md:w-1/3 group">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-white/70 group-hover:text-white transition-colors text-sm md:text-base"></i>
+                    <input type="text" placeholder="Cari makanan favoritmu..." class="w-full py-2.5 md:py-3 pl-10 md:pl-12 pr-4 md:pr-6 rounded-2xl border border-white/30 bg-white/20 backdrop-blur-md text-white placeholder-white/70 focus:bg-white/30 focus:ring-2 focus:ring-white/50 outline-none transition-all shadow-inner text-sm md:text-base">
+                </div>
+
+                <nav class="flex items-center gap-4 md:gap-8 font-medium text-white/90 text-sm md:text-base">
+                    <a href="index.html" class="hover:text-white hover:font-bold transition-all">Dashboard</a>
+                    <a href="index.html#contact-us" class="hover:text-white hover:font-bold transition-all">Contact Us</a>
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-white/20 rounded-full flex items-center justify-center cursor-pointer hover:bg-white hover:text-orange-600 transition-all shadow-lg">
+                        <i class="fa-regular fa-user text-base md:text-lg"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Konten Detail Restoran -->
+    <main class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 mb-12 md:mb-20">
+        <!-- Breadcrumb -->
+        <nav class="mb-6 md:mb-8 text-xs md:text-sm text-gray-500">
+            <a href="index.html" class="hover:text-orange-500">Home</a> / 
+            <a href="hasilsearch.html" class="hover:text-orange-500">Restaurants</a> / 
+            <span class="font-semibold text-gray-700">Warung Padang Sederhana</span>
+        </nav>
+
+        <div class="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg mb-6 md:mb-8">
+            <div class="bg-gray-200 rounded-xl md:rounded-2xl h-[250px] sm:h-[300px] md:h-[400px] w-full flex items-center justify-center text-white mb-6 md:mb-8">
+                <svg class="w-16 h-16 md:w-20 md:h-20 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+            </div>
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Warung Padang Sederhana</h1>
+            <div class="flex items-center mb-4 md:mb-6">
+                <div class="flex text-yellow-400">
+                    <i class="fa-solid fa-star text-sm md:text-base"></i>
+                    <i class="fa-solid fa-star text-sm md:text-base"></i>
+                    <i class="fa-solid fa-star text-sm md:text-base"></i>
+                    <i class="fa-solid fa-star text-sm md:text-base"></i>
+                    <i class="fa-regular fa-star text-sm md:text-base"></i>
+                </div>
+                <span class="ml-2 font-bold text-gray-800 text-sm md:text-base">4.5</span>
+                <span class="ml-1 text-gray-500 text-sm md:text-base">(Padang)</span>
+            </div>
+            <p class="text-gray-600 mb-6 max-w-full text-sm md:text-base">
+                Restoran Padang dengan masakan autentik. Tempat nyaman, pelayanan baik, harga terjangkau.
+            </p>
+            <!-- Tombol Lihat Lokasi di Map -->
+            <button onclick="openMapModal()" class="flex items-center text-orange-500 font-bold hover:text-orange-600 transition-colors text-sm md:text-base cursor-pointer">
+                <i class="fa-solid fa-location-dot mr-2"></i>
+                Lihat Lokasi di Map
             </button>
-          </div>
         </div>
-      </div>
-    </nav>
 
-    <h1>Ini detail</h1>
+        <!-- Menu Favorit -->
+        <div class="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg mb-6 md:mb-8">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Menu Favorit</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <div class="bg-gray-50 p-4 rounded-xl md:rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-gray-200 rounded-xl w-full aspect-square mb-3 md:mb-4 flex items-center justify-center text-white">
+                        <svg class="w-10 h-10 md:w-12 md:h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-base md:text-lg">Rendang Daging</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-2">Makanan Utama</p>
+                    <p class="font-bold text-orange-500 text-sm md:text-base">Rp 45.000</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl md:rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-gray-200 rounded-xl w-full aspect-square mb-3 md:mb-4 flex items-center justify-center text-white">
+                        <svg class="w-10 h-10 md:w-12 md:h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-base md:text-lg">Sate Padang</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-2">Makanan Pembuka</p>
+                    <p class="font-bold text-orange-500 text-sm md:text-base">Rp 35.000</p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-xl md:rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="bg-gray-200 rounded-xl w-full aspect-square mb-3 md:mb-4 flex items-center justify-center text-white">
+                        <svg class="w-10 h-10 md:w-12 md:h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-base md:text-lg">Dendeng Balado</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-2">Makanan Utama</p>
+                    <p class="font-bold text-orange-500 text-sm md:text-base">Rp 40.000</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Komentar dan Review -->
+        <div class="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg relative">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">Komentar dan Review</h2>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 mb-6 md:mb-8">
+                <div class="md:col-span-3 flex items-center gap-2">
+                    <span id="averageRating" class="text-4xl md:text-6xl font-bold text-black">0.0</span>
+                    <div class="flex text-yellow-400">
+                        <i class="fa-solid fa-star text-xl md:text-2xl"></i>
+                    </div>
+                </div>
+                <div class="md:col-span-9 flex flex-col gap-2 justify-center">
+                    <!-- Rating 5 -->
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-gray-500 w-3">5</span>
+                        <div class="flex-1 bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div id="ratingBar5" class="bg-orange-400 h-full w-0"></div>
+                        </div>
+                        <span id="ratingPercent5" class="text-xs text-gray-400 w-8 text-right">0%</span>
+                    </div>
+                    <!-- Rating 4 -->
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-gray-500 w-3">4</span>
+                        <div class="flex-1 bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div id="ratingBar4" class="bg-orange-400 h-full w-0"></div>
+                        </div>
+                        <span id="ratingPercent4" class="text-xs text-gray-400 w-8 text-right">0%</span>
+                    </div>
+                    <!-- Rating 3 -->
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-gray-500 w-3">3</span>
+                        <div class="flex-1 bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div id="ratingBar3" class="bg-orange-400 h-full w-0"></div>
+                        </div>
+                        <span id="ratingPercent3" class="text-xs text-gray-400 w-8 text-right">0%</span>
+                    </div>
+                    <!-- Rating 2 -->
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-gray-500 w-3">2</span>
+                        <div class="flex-1 bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div id="ratingBar2" class="bg-orange-400 h-full w-0"></div>
+                        </div>
+                        <span id="ratingPercent2" class="text-xs text-gray-400 w-8 text-right">0%</span>
+                    </div>
+                    <!-- Rating 1 -->
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-gray-500 w-3">1</span>
+                        <div class="flex-1 bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div id="ratingBar1" class="bg-orange-400 h-full w-0"></div>
+                        </div>
+                        <span id="ratingPercent1" class="text-xs text-gray-400 w-8 text-right">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-4 md:pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 md:mb-8 gap-3">
+                <p class="text-gray-500 text-xs md:text-sm">Tambahkan review</p>
+                <button id="addReviewBtn" class="bg-orange-500 hover:bg-orange-600 text-white text-xs md:text-sm font-bold py-2 px-4 rounded-md transition-colors shadow-sm w-full sm:w-auto">
+                    + Tambah Review
+                </button>
+            </div>
+
+            <h3 class="text-base md:text-lg font-bold text-gray-900 mb-4 md:mb-6" id="reviewCountTitle">All Reviews (0)</h3>
+            <div class="space-y-4 md:space-y-6" id="reviewsList">
+                <!-- Reviews akan muncul di sini secara dinamis -->
+                <div class="text-center py-8 text-gray-400" id="noReviewsMessage">
+                    <i class="fa-regular fa-comment text-3xl mb-2"></i>
+                    <p class="text-sm">Belum ada review</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full bg-gray-200 rounded-t-[30px] md:rounded-t-[40px] mt-8 md:mt-10 shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 py-6 md:py-10 text-center">
+            <h2 class="text-xl md:text-2xl font-bold mb-2 tracking-wide text-orange-600">Restosan</h2>
+            <p class="text-gray-600 text-xs md:text-sm mb-4 md:mb-6 font-medium">Platform review restoran terpercaya.</p>
+            <div class="flex justify-center gap-3 md:gap-4 mb-4 md:mb-6">
+                <i class="fa-brands fa-instagram text-xl md:text-2xl text-gray-500 hover:text-orange-500 cursor-pointer transition-colors"></i>
+                <i class="fa-brands fa-twitter text-xl md:text-2xl text-gray-500 hover:text-orange-500 cursor-pointer transition-colors"></i>
+                <i class="fa-brands fa-facebook text-xl md:text-2xl text-gray-500 hover:text-orange-500 cursor-pointer transition-colors"></i>
+            </div>
+            <p class="text-gray-600 text-xs font-medium">© Kelompok 4 2025. Made with ❤️ in Jakarta.</p>
+        </div>
+    </footer>
+
+    <!-- Modal untuk Tambah Review -->
+    <div id="reviewModal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="closeReviewModal()"></div>
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center">
+                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-full max-w-sm">
+                    <div class="absolute right-0 top-0 pr-3 pt-3 md:pr-4 md:pt-4 block">
+                        <button type="button" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none" onclick="closeReviewModal()">
+                            <span class="sr-only">Close</span>
+                            <i class="fa-solid fa-xmark text-lg"></i>
+                        </button>
+                    </div>
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="mt-3 text-center sm:ml-0 sm:mt-0 sm:text-left w-full">
+                            <h3 class="text-base font-semibold leading-6 text-gray-900 mb-2">Tambah Review</h3>
+                            <div class="flex items-center gap-1 mb-4" id="starContainer">
+                                <i onclick="setRating(1)" class="star-input fa-regular fa-star text-xl md:text-2xl text-gray-300 cursor-pointer hover:text-yellow-400 transition-colors"></i>
+                                <i onclick="setRating(2)" class="star-input fa-regular fa-star text-xl md:text-2xl text-gray-300 cursor-pointer hover:text-yellow-400 transition-colors"></i>
+                                <i onclick="setRating(3)" class="star-input fa-regular fa-star text-xl md:text-2xl text-gray-300 cursor-pointer hover:text-yellow-400 transition-colors"></i>
+                                <i onclick="setRating(4)" class="star-input fa-regular fa-star text-xl md:text-2xl text-gray-300 cursor-pointer hover:text-yellow-400 transition-colors"></i>
+                                <i onclick="setRating(5)" class="star-input fa-regular fa-star text-xl md:text-2xl text-gray-300 cursor-pointer hover:text-yellow-400 transition-colors"></i>
+                            </div>
+                            <div class="mb-4">
+                                <textarea id="reviewText" class="w-full border border-gray-300 rounded-xl md:rounded-2xl p-3 text-xs md:text-sm focus:outline-none focus:ring-1 focus:ring-orange-400" rows="3" placeholder="Tulis review..."></textarea>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <input id="anonymous" type="checkbox" name="review-type" class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-orange-500 rounded">
+                                <label for="anonymous" class="ml-2 text-xs md:text-sm text-gray-600">Review sebagai Anonim</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 rounded-b-lg">
+                        <button type="button" class="inline-flex w-full justify-center rounded-md bg-orange-500 px-3 py-2 text-xs md:text-sm font-semibold text-white shadow-sm hover:bg-orange-600" onclick="submitReview()">
+                            Submit Review
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Peta -->
+    <div id="mapModal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity" onclick="closeMapModal()"></div>
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center">
+                <div class="relative transform overflow-hidden rounded-xl md:rounded-2xl bg-white text-left shadow-2xl transition-all w-full max-w-3xl">
+                    <div class="absolute right-0 top-0 pr-3 pt-3 md:pr-4 md:pt-4 block z-10">
+                        <button type="button" class="rounded-full bg-white/90 hover:bg-white text-gray-700 hover:text-gray-900 focus:outline-none p-2 shadow-md" onclick="closeMapModal()">
+                            <span class="sr-only">Close</span>
+                            <i class="fa-solid fa-xmark text-lg"></i>
+                        </button>
+                    </div>
+                    <div class="bg-white p-4 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Lokasi Restoran</h3>
+                        <div class="map-container h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-md">
+                            <!-- Embed Google Maps -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d126749.05241745591!2d107.5069851!3d-6.9016186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e669e47ad56b%3A0xa3947cf57464652b!2sGormeteria!5e0!3m2!1sen!2sid!4v1766123177934!5m2!1sen!2sid" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="mt-4 md:mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                            <div class="text-sm text-gray-600">
+                                <p class="font-medium"><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i>Gormeteria, Bandung</p>
+                                <p class="text-xs mt-1">Buka setiap hari, 08:00-22:00</p>
+                            </div>
+                            <a href="https://maps.app.goo.gl/vkmvcoc8B6JPPyr86" target="_blank" class="inline-flex items-center justify-center rounded-md bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold py-2 px-4 transition-colors shadow-sm">
+                                <i class="fa-solid fa-external-link-alt mr-2"></i> Buka di Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data rating untuk kalkulasi persentase (kosong untuk awal)
+        let ratingCounts = {
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0
+        };
+        
+        let totalReviews = 0;
+        let currentRating = 0;
+        const reviewModal = document.getElementById('reviewModal');
+        const mapModal = document.getElementById('mapModal');
+        const addReviewBtn = document.getElementById('addReviewBtn');
+
+        // Hitung persentase awal
+        updateRatingStats();
+
+        // ========== FUNGSI UNTUK REVIEW MODAL ==========
+        // 1. FUNGSI BUKA REVIEW MODAL
+        addReviewBtn.onclick = function() {
+            reviewModal.classList.remove('hidden');
+            setTimeout(() => {
+                reviewModal.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        // 2. FUNGSI TUTUP REVIEW MODAL
+        function closeReviewModal() {
+            reviewModal.classList.add('opacity-0');
+            setTimeout(() => {
+                reviewModal.classList.add('hidden');
+                resetForm();
+            }, 300);
+        }
+
+        // 3. FUNGSI UBAH WARNA BINTANG (Saat diklik)
+        function setRating(rating) {
+            currentRating = rating;
+            const stars = document.querySelectorAll('.star-input');
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.remove('fa-regular', 'text-gray-300');
+                    star.classList.add('fa-solid', 'text-yellow-400');
+                } else {
+                    star.classList.remove('fa-solid', 'text-yellow-400');
+                    star.classList.add('fa-regular', 'text-gray-300');
+                }
+            });
+        }
+
+        // 4. FUNGSI BERSIHKAN FORM REVIEW
+        function resetForm() {
+            document.getElementById('reviewText').value = '';
+            document.getElementById('anonymous').checked = false;
+            setRating(0);
+        }
+
+        // 5. FUNGSI UPDATE STATISTIK RATING
+        function updateRatingStats() {
+            // Hitung total reviews
+            totalReviews = Object.values(ratingCounts).reduce((a, b) => a + b, 0);
+            
+            // Update rating count display
+            document.getElementById('reviewCountTitle').innerText = `All Reviews (${totalReviews})`;
+            
+            if (totalReviews === 0) {
+                // Jika belum ada review
+                document.getElementById('averageRating').innerText = '0.0';
+                for (let i = 1; i <= 5; i++) {
+                    document.getElementById(`ratingBar${i}`).style.width = '0%';
+                    document.getElementById(`ratingPercent${i}`).innerText = '0%';
+                }
+                // Tampilkan pesan tidak ada review
+                document.getElementById('noReviewsMessage').style.display = 'block';
+                return;
+            }
+            
+            // Sembunyikan pesan tidak ada review
+            document.getElementById('noReviewsMessage').style.display = 'none';
+            
+            // Hitung rata-rata rating
+            let totalScore = 0;
+            for (let rating = 1; rating <= 5; rating++) {
+                totalScore += rating * ratingCounts[rating];
+            }
+            const averageRating = (totalScore / totalReviews).toFixed(1);
+            document.getElementById('averageRating').innerText = averageRating;
+            
+            // Update progress bars dan persentase
+            for (let rating = 1; rating <= 5; rating++) {
+                const percentage = totalReviews > 0 ? (ratingCounts[rating] / totalReviews) * 100 : 0;
+                document.getElementById(`ratingBar${rating}`).style.width = `${percentage}%`;
+                document.getElementById(`ratingPercent${rating}`).innerText = `${Math.round(percentage)}%`;
+            }
+        }
+
+        // 6. FUNGSI SUBMIT REVIEW
+        function submitReview() {
+            const text = document.getElementById('reviewText').value;
+            const isAnon = document.getElementById('anonymous').checked;
+
+            if (currentRating === 0) {
+                alert("Pilih rating terlebih dahulu");
+                return;
+            }
+
+            if (!text.trim()) {
+                alert("Tulis review terlebih dahulu");
+                return;
+            }
+
+            const name = isAnon ? "Anonymous" : "User Baru";
+            const date = new Date().toLocaleDateString('en-US');
+            
+            // Update rating counts
+            ratingCounts[currentRating]++;
+            
+            // Membuat HTML bintang
+            let starsHtml = '';
+            for(let i=0; i<5; i++) {
+                if(i < currentRating) {
+                    starsHtml += '<i class="fa-solid fa-star text-yellow-400 text-xs md:text-sm"></i>';
+                } else {
+                    starsHtml += '<i class="fa-regular fa-star text-gray-300 text-xs md:text-sm"></i>';
+                }
+            }
+
+            // Menyusun HTML review baru
+            const newReviewHTML = `
+                <div class="pb-4 md:pb-6 border-b border-gray-200 last:border-0 animation-fade-in" data-rating="${currentRating}">
+                    <div class="flex items-start gap-3 md:gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full ${isAnon ? 'bg-gray-600' : 'bg-gray-300'} flex items-center justify-center">
+                                <i class="fa-solid fa-user text-white text-xs md:text-sm"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-gray-900 text-sm md:text-base">${name}</span>
+                            </div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="flex text-yellow-400">
+                                    ${starsHtml}
+                                </div>
+                                <span class="text-xs text-gray-400">${date}</span>
+                            </div>
+                            <p class="text-gray-800 text-xs md:text-sm">${text}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Masukkan review baru ke daftar paling atas
+            const list = document.getElementById('reviewsList');
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = newReviewHTML;
+            list.prepend(tempDiv.firstElementChild);
+
+            // Update rating statistics
+            updateRatingStats();
+            
+            closeReviewModal();
+        }
+
+        // ========== FUNGSI UNTUK MAP MODAL ==========
+        // 7. FUNGSI BUKA MAP MODAL
+        function openMapModal() {
+            mapModal.classList.remove('hidden');
+            setTimeout(() => {
+                mapModal.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        // 8. FUNGSI TUTUP MAP MODAL
+        function closeMapModal() {
+            mapModal.classList.add('opacity-0');
+            setTimeout(() => {
+                mapModal.classList.add('hidden');
+            }, 300);
+        }
+
+        // 9. FUNGSI UNTUK ESC KEY (tutup modal dengan ESC)
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (!reviewModal.classList.contains('hidden')) {
+                    closeReviewModal();
+                }
+                if (!mapModal.classList.contains('hidden')) {
+                    closeMapModal();
+                }
+            }
+        });
+    </script>
+
+    <style>
+        .animation-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Styling untuk map modal */
+        .map-container {
+            position: relative;
+            background: #f5f5f5;
+        }
+        
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </body>
-</html>
+</html> 
