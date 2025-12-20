@@ -10,7 +10,7 @@ class Footer extends HTMLElement{
     }
 
     async getFooter(){
-        const htmlnya = await fetch("../components/footer.html");
+        const htmlnya = await fetch("../../components/footer.html");
 
         const data = await htmlnya.text();
 
