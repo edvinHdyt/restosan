@@ -43,6 +43,7 @@ function hideDropdownProfile(){
         setTimeout(() => {
           elm.classList.add("opacity-0");
           elm.classList.add("translate-y-20");
+          elm.classList.add("hidden");
           elmParent.classList.remove('z-100');
           elmParent.classList.add('z-0');
         }, 100);
@@ -85,6 +86,7 @@ function manipulateDropdownProfile(){
     elm.classList.remove("opacity-0");
     elm.classList.remove("translate-y-20");
     elm.classList.remove("animate-profile-slidedown");
+    elm.classList.remove("hidden");
     elm.classList.add("opacity-100");
     elm.classList.add("animate-profile-slideup");
 
@@ -102,6 +104,7 @@ function manipulateDropdownProfile(){
     setTimeout(() => {
       elm.classList.add("opacity-0");
       elm.classList.add("translate-y-20");
+      elm.classList.add("hidden");
       elmParent.classList.remove('z-100');
       elmParent.classList.add('z-0');
     }, 100);

@@ -44,7 +44,7 @@ function showAlertChangePassword(){
   let confirmEmailInput;
   let htmlnya = '<div class="flex flex-col items-start justify-start"'+
   '<label for="confirmEmail">Email</label>' + 
-  '<input type="email" class="w-full bg-gray-300 rounded-lg outline-gray-500 py-2 px-3 mt-2" placeholder="email" id="confirmEmail"/>'+
+  '<input type="email" class="w-full border-[0.1px] bg-white border-gray-400 rounded-lg outline-blue-500 py-2 px-3" placeholder="email" id="confirmEmail"/>'+
   '</div>';
 
 
@@ -76,11 +76,11 @@ function showAlertChangePassForm(){
   let htmlnya = '<div class="flex flex-col">'+
     '<div class="flex flex-col items-start justify-start mb-2"'+
     '<label for="password">Password</label>' + 
-    '<input type="password" class="w-full bg-gray-300 rounded-lg outline-gray-500 py-2 px-3 mt-2" placeholder="Password" id="password"/>'+
+    '<input type="password" class="w-full border-[0.1px] bg-white border-gray-400 rounded-lg outline-blue-500 py-2 px-3" placeholder="Password" id="password"/>'+
     '</div>'+
     '<div class="flex flex-col items-start justify-start mb-2"'+
     '<label for="confirmPassword">Confirm Password</label>' + 
-    '<input type="password" class="w-full bg-gray-300 rounded-lg outline-gray-500 py-2 px-3 mt-2" placeholder="Confirm Password" id="confirmPassword"/>'+
+    '<input type="password" class="w-full border-[0.1px] bg-white border-gray-400 rounded-lg outline-blue-500 py-2 px-3" placeholder="Confirm Password" id="confirmPassword"/>'+
     '</div>'+
   '</div>';
 
