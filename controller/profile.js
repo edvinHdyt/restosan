@@ -6,12 +6,39 @@ document.addEventListener('click', function(){
     case "changePassword":
       showAlertChangePassword();
       break;
-  
+    case "changeProfile":
+      chageProfile();
+      break;
     default:
       break;
   }
 });
 
+function chageProfile(){
+  const inputFile = document.getElementById("profilePictInput");
+  const defaultProfile = document.getElementById("profileDefault");
+  const profilePict = document.getElementById("profilePict");
+
+  inputFile.click();
+
+  inputFile.addEventListener('change', function(){
+    const file = inputFile.files;
+
+    if(file.length > 0){
+      const reader = new FileReader();
+
+      reader.addEventListener("load", () => {
+        defaultProfile.classList.add("hidden");
+        profilePict.classList.remove("hidden");
+        profilePict.src = reader.result;
+      })
+
+      
+      reader.readAsDataURL(file[0]);
+      
+    }
+  })
+}
 
 function showAlertChangePassword(){
   let confirmEmailInput;
