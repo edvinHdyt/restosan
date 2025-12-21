@@ -75,18 +75,5 @@
 
   </div>
 
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const p = document.querySelectorAll("input")[1].value;
-      const c = document.querySelectorAll("input")[2].value;
-      if (p !== c) {
-        alert("Kata sandi tidak cocok!");
-        return;
-      }
-      alert("Form berhasil disubmit!");
-    });
-  </script>
-
 </body>
 </html>
