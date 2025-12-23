@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restosan - Search Result</title>
+    <link rel="shortcut icon" href="./Gambar/favicon.ico" type="image/x-icon">
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <!-- Font dan Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="./src/output.css" rel="stylesheet" />
+
     <!--Nama Font -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -40,43 +43,10 @@
     </script>
 </head>
 
-<!-- Navbar -->
 <body class="bg-slate-50 text-gray-700">
-
-    <header class="w-full bg-gradient-to-r from-orange-500 to-rose-600 shadow-xl rounded-b-[40px] mb-12 overflow-hidden sticky top-0 z-50">
-        <div class="absolute top-[-50%] left-[-10%] w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-[-50%] right-[-10%] w-96 h-96 bg-yellow-400/20 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-[1440px] mx-auto px-8 py-8 relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                
-                <a href="#" class="flex items-center gap-3 hover:opacity-90 transition-opacity">
-                    
-                    <div class="bg-white h-12 w-12 rounded-full flex items-center justify-center shadow-md">
-                        <img src="Gambar/LogoRestosan.png" 
-                             alt="Logo" 
-                             class="w-full h-full object-contain" />
-                    </div>
-                    <span class="text-2xl font-extrabold text-white tracking-wide drop-shadow-md">
-                        Restosan
-                    </span>
-                </a>
-
-                <div class="relative w-full md:w-1/3 group">
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-white/70 group-hover:text-white transition-colors"></i>
-                    <input type="text" placeholder="Cari makanan favoritmu..." class="w-full py-3 pl-12 pr-6 rounded-2xl border border-white/30 bg-white/20 backdrop-blur-md text-white placeholder-white/70 focus:bg-white/30 focus:ring-2 focus:ring-white/50 outline-none transition-all shadow-inner">
-                </div>
-
-                <nav class="flex items-center gap-8 font-medium text-white/90">
-                    <a href="#" class="hover:text-white hover:font-bold transition-all">Dashboard</a>
-                    <a href="#" class="hover:text-white hover:font-bold transition-all">Contact Us</a>
-                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center cursor-pointer hover:bg-white hover:text-orange-600 transition-all shadow-lg">
-                        <i class="fa-regular fa-user text-lg"></i>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </header>
+    <!-- Navbar -->
+    <main-navbar-search></main-navbar-search>
+    
 
     <!-- List Bar -->
     <main class="max-w-[1440px] mx-auto px-8 mb-20">
@@ -1661,18 +1631,14 @@
 
     </main>
 
-    <footer class="w-full bg-gray-200 rounded-t-[40px] mt-10 shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
-        <div class="max-w-[1440px] mx-auto px-8 py-10 text-center">
-            <h2 class="text-2xl font-bold mb-2 tracking-wide text-orange-600">Restosan</h2>
-            <p class="text-gray-600 text-sm mb-6 font-medium">Temukan makanan lezat di sekitarmu dengan mudah.</p>
-            <div class="flex justify-center gap-4 mb-6">
-                <i class="fa-brands fa-instagram text-2xl text-gray-500 hover:text-orange-500 cursor-pointer transition-colors"></i>
-                <i class="fa-brands fa-twitter text-2xl text-gray-500 hover:text-orange-500 cursor-pointer transition-colors"></i>
-                <i class="fa-brands fa-facebook text-2xl text-gray-500 hover:text-orange-500 cursor-pointer transition-colors"></i>
-            </div>
-            <p class="text-gray-600 text-xs font-medium">© Kelompok 4 2025. Made with ❤️ in Jakarta.</p>
-        </div>
-    </footer>
+    <!-- footer -->
+    <main-footer></main-footer>
+
+    <!-- component -->
+    <script src="./util/navbar-component.js"></script>
+    <script src="./util/footer-component.js"></script>
+
+    <script src="./controller/controller.js"></script>
 
 </body>
 </html>
