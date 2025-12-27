@@ -1,0 +1,44 @@
+{
+    "cities": [
+        {
+            "id": 1,
+            "kota": "Bandung"
+        },
+        {
+            "id": 2,
+            "kota": "Bekasi"
+        },
+        {
+            "id": 3,
+            "kota": "Bintaro"
+        },
+        {
+            "id": 4,
+            "kota": "Jakarta Pusat"
+        },
+        {
+            "id": 5,
+            "kota": "Depok"
+        },
+        {
+            "id": 6,
+            "kota": "Jakarta Barat"
+        },
+        {
+            "id": 7,
+            "kota": "Jakarta Utara"
+        },
+        {
+            "id": 8,
+            "kota": "Jakarta Selatan"
+        },
+        {
+            "id": 9,
+            "kota": "Cimahi"
+        },
+        {
+            "id": 10,
+            "kota": "Jakarta Timur"
+        }
+    ]
+}

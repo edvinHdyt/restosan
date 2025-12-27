@@ -1,0 +1,564 @@
+{
+    "reviews": [
+        {
+            "id": 1,
+            "id_restaurant": 1,
+            "id_user": 1,
+            "rating": 5,
+            "comment": "Pemandangan kota Bandung dari sini juara banget, steaknya juga juicy.",
+            "created_at": "2025-12-20"
+        },
+        {
+            "id": 2,
+            "id_restaurant": 1,
+            "id_user": 3,
+            "rating": 4,
+            "comment": "Suasana romantis, cocok buat dinner bareng pasangan.",
+            "created_at": "2025-12-21"
+        },
+        {
+            "id": 3,
+            "id_restaurant": 2,
+            "id_user": 2,
+            "rating": 5,
+            "comment": "Makan di saung-saung asri banget, nasi liwetnya enak.",
+            "created_at": "2025-12-18"
+        },
+        {
+            "id": 4,
+            "id_restaurant": 2,
+            "id_user": 8,
+            "rating": 4,
+            "comment": "Sambalnya mantap, tapi pelayanan agak lama pas weekend.",
+            "created_at": "2025-12-19"
+        },
+        {
+            "id": 5,
+            "id_restaurant": 2,
+            "id_user": 5,
+            "rating": 5,
+            "comment": "Tempat wajib kalau ke Bandung bareng keluarga.",
+            "created_at": "2025-12-22"
+        },
+        {
+            "id": 6,
+            "id_restaurant": 3,
+            "id_user": 4,
+            "rating": 4,
+            "comment": "Ambience-nya lucu, banyak spot foto.",
+            "created_at": "2025-12-20"
+        },
+        {
+            "id": 7,
+            "id_restaurant": 3,
+            "id_user": 6,
+            "rating": 5,
+            "comment": "Crepes-nya enak banget, kopi juga oke.",
+            "created_at": "2025-12-23"
+        },
+        {
+            "id": 8,
+            "id_restaurant": 4,
+            "id_user": 1,
+            "rating": 5,
+            "comment": "View malam harinya spektakuler!",
+            "created_at": "2025-12-15"
+        },
+        {
+            "id": 9,
+            "id_restaurant": 4,
+            "id_user": 7,
+            "rating": 4,
+            "comment": "Harga agak pricey tapi worth it sama view-nya.",
+            "created_at": "2025-12-16"
+        },
+        {
+            "id": 10,
+            "id_restaurant": 5,
+            "id_user": 2,
+            "rating": 4,
+            "comment": "Makanan asia fusion yang enak, tempatnya cozy.",
+            "created_at": "2025-12-10"
+        },
+        {
+            "id": 11,
+            "id_restaurant": 6,
+            "id_user": 3,
+            "rating": 5,
+            "comment": "Seafood-nya segar, pilih sendiri langsung dimasak.",
+            "created_at": "2025-12-11"
+        },
+        {
+            "id": 12,
+            "id_restaurant": 6,
+            "id_user": 5,
+            "rating": 4,
+            "comment": "Cumi goreng tepungnya favorit anak-anak.",
+            "created_at": "2025-12-12"
+        },
+        {
+            "id": 13,
+            "id_restaurant": 6,
+            "id_user": 8,
+            "rating": 5,
+            "comment": "Saus padangnya nendang banget.",
+            "created_at": "2025-12-14"
+        },
+        {
+            "id": 14,
+            "id_restaurant": 7,
+            "id_user": 4,
+            "rating": 4,
+            "comment": "Udang bakar madunya enak, suasana pedesaan.",
+            "created_at": "2025-12-18"
+        },
+        {
+            "id": 15,
+            "id_restaurant": 7,
+            "id_user": 6,
+            "rating": 5,
+            "comment": "Cocok buat makan besar bareng keluarga besar.",
+            "created_at": "2025-12-19"
+        },
+        {
+            "id": 16,
+            "id_restaurant": 8,
+            "id_user": 1,
+            "rating": 5,
+            "comment": "Steak wagyu-nya lumer di mulut.",
+            "created_at": "2025-12-20"
+        },
+        {
+            "id": 17,
+            "id_restaurant": 9,
+            "id_user": 2,
+            "rating": 4,
+            "comment": "Tempatnya luas, ada area outdoor yang nyaman.",
+            "created_at": "2025-12-21"
+        },
+        {
+            "id": 18,
+            "id_restaurant": 10,
+            "id_user": 3,
+            "rating": 5,
+            "comment": "Bakmi legendaris, pangsit gorengnya juara.",
+            "created_at": "2025-12-22"
+        },
+        {
+            "id": 19,
+            "id_restaurant": 10,
+            "id_user": 7,
+            "rating": 4,
+            "comment": "Pelayanan cepat meski antri.",
+            "created_at": "2025-12-23"
+        },
+        {
+            "id": 20,
+            "id_restaurant": 11,
+            "id_user": 4,
+            "rating": 5,
+            "comment": "Steak murah tapi kualitas rasa bintang lima.",
+            "created_at": "2025-12-20"
+        },
+        {
+            "id": 21,
+            "id_restaurant": 11,
+            "id_user": 5,
+            "rating": 4,
+            "comment": "Saus mushroom-nya enak banget.",
+            "created_at": "2025-12-21"
+        },
+        {
+            "id": 22,
+            "id_restaurant": 12,
+            "id_user": 6,
+            "rating": 5,
+            "comment": "Makan di pinggir danau, suasananya tenang.",
+            "created_at": "2025-12-15"
+        },
+        {
+            "id": 23,
+            "id_restaurant": 13,
+            "id_user": 8,
+            "rating": 4,
+            "comment": "Tempat nongkrong yang asik di Bintaro.",
+            "created_at": "2025-12-16"
+        },
+        {
+            "id": 24,
+            "id_restaurant": 13,
+            "id_user": 1,
+            "rating": 5,
+            "comment": "Kopinya enak, makanan beratnya juga oke.",
+            "created_at": "2025-12-17"
+        },
+        {
+            "id": 25,
+            "id_restaurant": 14,
+            "id_user": 2,
+            "rating": 5,
+            "comment": "Latte art-nya bagus, tempatnya aesthetic.",
+            "created_at": "2025-12-18"
+        },
+        {
+            "id": 26,
+            "id_restaurant": 15,
+            "id_user": 3,
+            "rating": 4,
+            "comment": "Porsi steaknya besar, kenyang banget.",
+            "created_at": "2025-12-19"
+        },
+        {
+            "id": 27,
+            "id_restaurant": 16,
+            "id_user": 4,
+            "rating": 5,
+            "comment": "Sate ayamnya empuk, bumbu kacangnya halus.",
+            "created_at": "2025-12-20"
+        },
+        {
+            "id": 28,
+            "id_restaurant": 16,
+            "id_user": 7,
+            "rating": 4,
+            "comment": "Tahu telurnya enak.",
+            "created_at": "2025-12-21"
+        },
+        {
+            "id": 29,
+            "id_restaurant": 17,
+            "id_user": 5,
+            "rating": 5,
+            "comment": "Interiornya unik banget, mistis tapi elegan.",
+            "created_at": "2025-12-10"
+        },
+        {
+            "id": 30,
+            "id_restaurant": 17,
+            "id_user": 6,
+            "rating": 5,
+            "comment": "Nasi gorengnya sangat recommended.",
+            "created_at": "2025-12-11"
+        },
+        {
+            "id": 31,
+            "id_restaurant": 18,
+            "id_user": 8,
+            "rating": 4,
+            "comment": "Masakan nusantara dengan penyajian mewah.",
+            "created_at": "2025-12-12"
+        },
+        {
+            "id": 32,
+            "id_restaurant": 19,
+            "id_user": 1,
+            "rating": 5,
+            "comment": "Salah satu kopi terbaik di Jakarta.",
+            "created_at": "2025-12-13"
+        },
+        {
+            "id": 33,
+            "id_restaurant": 20,
+            "id_user": 2,
+            "rating": 5,
+            "comment": "Venue-nya megah, pelayanan sangat profesional.",
+            "created_at": "2025-12-14"
+        },
+        {
+            "id": 34,
+            "id_restaurant": 21,
+            "id_user": 3,
+            "rating": 4,
+            "comment": "Murah meriah, pedasnya nampol.",
+            "created_at": "2025-12-15"
+        },
+        {
+            "id": 35,
+            "id_restaurant": 21,
+            "id_user": 5,
+            "rating": 4,
+            "comment": "Antrinya panjang banget tapi worth it.",
+            "created_at": "2025-12-16"
+        },
+        {
+            "id": 36,
+            "id_restaurant": 21,
+            "id_user": 4,
+            "rating": 5,
+            "comment": "Mie iblis level 8 mantap!",
+            "created_at": "2025-12-17"
+        },
+        {
+            "id": 37,
+            "id_restaurant": 22,
+            "id_user": 6,
+            "rating": 4,
+            "comment": "Pecinta sambal wajib kesini.",
+            "created_at": "2025-12-18"
+        },
+        {
+            "id": 38,
+            "id_restaurant": 23,
+            "id_user": 7,
+            "rating": 5,
+            "comment": "Daging shabu-shabunya berkualitas.",
+            "created_at": "2025-12-19"
+        },
+        {
+            "id": 39,
+            "id_restaurant": 24,
+            "id_user": 8,
+            "rating": 4,
+            "comment": "Gurame goreng kipasnya enak garing.",
+            "created_at": "2025-12-20"
+        },
+        {
+            "id": 40,
+            "id_restaurant": 25,
+            "id_user": 1,
+            "rating": 4,
+            "comment": "Enak buat ngerjain tugas, banyak buku bacaan.",
+            "created_at": "2025-12-21"
+        },
+        {
+            "id": 41,
+            "id_restaurant": 26,
+            "id_user": 2,
+            "rating": 5,
+            "comment": "Ramennya creamy dan gurih banget.",
+            "created_at": "2025-12-22"
+        },
+        {
+            "id": 42,
+            "id_restaurant": 26,
+            "id_user": 3,
+            "rating": 5,
+            "comment": "Buta Kara-nya terbaik.",
+            "created_at": "2025-12-23"
+        },
+        {
+            "id": 43,
+            "id_restaurant": 27,
+            "id_user": 4,
+            "rating": 5,
+            "comment": "Kepiting saus telor asinnya juara.",
+            "created_at": "2025-12-20"
+        },
+        {
+            "id": 44,
+            "id_restaurant": 28,
+            "id_user": 5,
+            "rating": 4,
+            "comment": "Pizza tipis renyah, bir dingin.",
+            "created_at": "2025-12-21"
+        },
+        {
+            "id": 45,
+            "id_restaurant": 29,
+            "id_user": 6,
+            "rating": 4,
+            "comment": "AYCE shabu-shabu yang affordable.",
+            "created_at": "2025-12-15"
+        },
+        {
+            "id": 46,
+            "id_restaurant": 30,
+            "id_user": 7,
+            "rating": 5,
+            "comment": "Sushi tangga-nya unik dan fresh.",
+            "created_at": "2025-12-16"
+        },
+        {
+            "id": 47,
+            "id_restaurant": 30,
+            "id_user": 8,
+            "rating": 5,
+            "comment": "Sashimi salmonnya segar banget.",
+            "created_at": "2025-12-17"
+        },
+        {
+            "id": 48,
+            "id_restaurant": 31,
+            "id_user": 1,
+            "rating": 4,
+            "comment": "Makan seafood sambil liat laut.",
+            "created_at": "2025-12-18"
+        },
+        {
+            "id": 49,
+            "id_restaurant": 32,
+            "id_user": 2,
+            "rating": 5,
+            "comment": "Best place for sunset dinner in Jakarta.",
+            "created_at": "2025-12-19"
+        },
+        {
+            "id": 50,
+            "id_restaurant": 33,
+            "id_user": 3,
+            "rating": 5,
+            "comment": "Authentic sushi, lokasinya agak terpencil tapi worth it.",
+            "created_at": "2025-12-20"
+        },
+        {
+            "id": 51,
+            "id_restaurant": 34,
+            "id_user": 4,
+            "rating": 5,
+            "comment": "Dimsum 24 jam yang selalu ramai.",
+            "created_at": "2025-12-21"
+        },
+        {
+            "id": 52,
+            "id_restaurant": 34,
+            "id_user": 5,
+            "rating": 4,
+            "comment": "Hakau udangnya full daging.",
+            "created_at": "2025-12-22"
+        },
+        {
+            "id": 53,
+            "id_restaurant": 35,
+            "id_user": 6,
+            "rating": 4,
+            "comment": "Korean BBQ dengan banchan yang banyak.",
+            "created_at": "2025-12-23"
+        },
+        {
+            "id": 54,
+            "id_restaurant": 36,
+            "id_user": 7,
+            "rating": 5,
+            "comment": "Standar sushi yang gak pernah gagal.",
+            "created_at": "2025-12-20"
+        },
+        {
+            "id": 55,
+            "id_restaurant": 37,
+            "id_user": 8,
+            "rating": 4,
+            "comment": "Red velvet cake-nya wajib coba.",
+            "created_at": "2025-12-21"
+        },
+        {
+            "id": 56,
+            "id_restaurant": 38,
+            "id_user": 1,
+            "rating": 5,
+            "comment": "Rendang dan ayam pop-nya the best.",
+            "created_at": "2025-12-22"
+        },
+        {
+            "id": 57,
+            "id_restaurant": 39,
+            "id_user": 2,
+            "rating": 5,
+            "comment": "Masakan Perancis yang casual tapi elegan.",
+            "created_at": "2025-12-10"
+        },
+        {
+            "id": 58,
+            "id_restaurant": 40,
+            "id_user": 3,
+            "rating": 4,
+            "comment": "Kopinya strong, suasana retro.",
+            "created_at": "2025-12-11"
+        },
+        {
+            "id": 59,
+            "id_restaurant": 41,
+            "id_user": 4,
+            "rating": 4,
+            "comment": "Ada kebun binatang mininya, anak-anak suka.",
+            "created_at": "2025-12-12"
+        },
+        {
+            "id": 60,
+            "id_restaurant": 42,
+            "id_user": 5,
+            "rating": 4,
+            "comment": "Sambal dadaknya pedas mantap.",
+            "created_at": "2025-12-13"
+        },
+        {
+            "id": 61,
+            "id_restaurant": 42,
+            "id_user": 6,
+            "rating": 5,
+            "comment": "Ayam goreng basahnya enak.",
+            "created_at": "2025-12-14"
+        },
+        {
+            "id": 62,
+            "id_restaurant": 43,
+            "id_user": 7,
+            "rating": 4,
+            "comment": "Ramen enak di Cimahi, kuahnya kental.",
+            "created_at": "2025-12-15"
+        },
+        {
+            "id": 63,
+            "id_restaurant": 44,
+            "id_user": 8,
+            "rating": 4,
+            "comment": "Masakan sunda prasmanan, banyak pilihan.",
+            "created_at": "2025-12-16"
+        },
+        {
+            "id": 64,
+            "id_restaurant": 45,
+            "id_user": 1,
+            "rating": 4,
+            "comment": "Tempat ngopi santai di Cimahi.",
+            "created_at": "2025-12-17"
+        },
+        {
+            "id": 65,
+            "id_restaurant": 46,
+            "id_user": 2,
+            "rating": 4,
+            "comment": "Yakiniku dan shabu-shabu sepuasnya.",
+            "created_at": "2025-12-18"
+        },
+        {
+            "id": 66,
+            "id_restaurant": 47,
+            "id_user": 3,
+            "rating": 5,
+            "comment": "Sate padang paling enak di Jakarta Timur.",
+            "created_at": "2025-12-19"
+        },
+        {
+            "id": 67,
+            "id_restaurant": 47,
+            "id_user": 4,
+            "rating": 5,
+            "comment": "Dagingnya empuk, kuahnya kental berempah.",
+            "created_at": "2025-12-20"
+        },
+        {
+            "id": 68,
+            "id_restaurant": 48,
+            "id_user": 5,
+            "rating": 4,
+            "comment": "Nasi mandhi kambingnya luar biasa.",
+            "created_at": "2025-12-21"
+        },
+        {
+            "id": 69,
+            "id_restaurant": 49,
+            "id_user": 6,
+            "rating": 4,
+            "comment": "Ayam goreng dan sop buntutnya enak.",
+            "created_at": "2025-12-22"
+        },
+        {
+            "id": 70,
+            "id_restaurant": 50,
+            "id_user": 7,
+            "rating": 4,
+            "comment": "Sandwich submarine yang rotinya renyah.",
+            "created_at": "2025-12-23"
+        }
+        ]
+}
