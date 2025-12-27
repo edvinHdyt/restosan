@@ -1,3 +1,5 @@
+const STORAGE_KEY_RATING = 'restosan-ratings';
+const STORAGE_KEY_USER_LOGIN = 'restosan-user-login';
 document.addEventListener("click", function(){
   const strId = event.target.dataset['id'];
 
@@ -10,10 +12,23 @@ document.addEventListener("click", function(){
         manipulateDropdownProfile();
         hideDropdownNavbar();
       break;
+    case "logout":
+      localStorage.removeItem(STORAGE_KEY_USER_LOGIN);
+      window.location.href = "login.html"
+      break;
+    // case "filterKota":
+    //   let idKota = event.target.dataset["value"];
+    //   let obj = {
+    //     idKota : parseInt(idKota)
+    //   }
+
+    //   showRestaurants(obj);
+    //   break;
     default:
       break;
   }
 });
+
 
 function hideDropdownNavbar(){
    const elm = document.getElementById("dropdownNavbar");
@@ -130,13 +145,5 @@ window.onclick = function (event) {
 };
 
 
-const initial = async () => {
-    let res = await fetch("https://dummyjson.com/c/1ddf-ab2f-4455-926a");
-    let dataRestaurants = await res.json();
-    dataRestaurants = dataRestaurants["restaurants"].map(e => e).filter((data) => parseFloat(data["rating"]) > 4.5 );
-
-    console.log(dataRestaurants);
-}
 
 
-initial();

@@ -1,5 +1,5 @@
 {
-    "restaurants": [
+    "categories": [
         {
             "id": 1,
             "category": "Fine Dining"

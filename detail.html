@@ -33,7 +33,7 @@
             <div class="bg-gray-200 rounded-xl md:rounded-2xl h-[250px] sm:h-[300px] md:h-[400px] w-full flex items-center justify-center mb-6 md:mb-8 overflow-hidden">
                 <img src="./Gambar/RestaurantDisplay/Restaurant2.jpeg" alt="Contoh Gambar Restoran" class="w-full h-full object-cover">
             </div>
-            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Warung Padang Sederhana</h1>
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2" id="restaurantName">Warung Padang Sederhana</h1>
             <div class="flex items-center mb-4 md:mb-6">
                 <div class="flex text-yellow-400">
                     <i class="fa-solid fa-star text-sm md:text-base"></i>
@@ -42,10 +42,10 @@
                     <i class="fa-solid fa-star text-sm md:text-base"></i>
                     <i class="fa-regular fa-star text-sm md:text-base"></i>
                 </div>
-                <span class="ml-2 font-bold text-gray-800 text-sm md:text-base">4.5</span>
-                <span class="ml-1 text-gray-500 text-sm md:text-base">(Padang)</span>
+                <span class="ml-2 font-bold text-gray-800 text-sm md:text-base" id="restaurantRating">4.5</span>
+                <span class="ml-1 text-gray-500 text-sm md:text-base" id="restaurantLocation">(Padang)</span>
             </div>
-            <p class="text-gray-600 mb-6 max-w-full text-sm md:text-base">
+            <p class="text-gray-600 mb-6 max-w-full text-sm md:text-base" id="restaurantDesc">
                 Restoran Padang dengan masakan autentik. Tempat nyaman, pelayanan baik, harga terjangkau.
             </p>
             <!-- Tombol Lihat Lokasi di Map -->
@@ -152,7 +152,7 @@
             <h3 class="text-base md:text-lg font-bold text-gray-900 mb-4 md:mb-6" id="reviewCountTitle">All Reviews (0)</h3>
             <div class="space-y-4 md:space-y-6" id="reviewsList">
                 <!-- Review bakal muncul di sini, nanti bisa nambah otomatis -->
-                <div class="text-center py-8 text-gray-400" id="noReviewsMessage">
+                <div class="text-center py-8 text-gray-400 hidden" id="noReviewsMessage">
                     <i class="fa-regular fa-comment text-3xl mb-2"></i>
                     <p class="text-sm">Belum ada review</p>
                 </div>
@@ -189,7 +189,7 @@
                                 <textarea id="reviewText" class="w-full border border-gray-300 rounded-xl md:rounded-2xl p-3 text-xs md:text-sm focus:outline-none focus:ring-1 focus:ring-orange-400" rows="3" placeholder="Tulis review..."></textarea>
                             </div>
                             <div class="flex items-center mb-4">
-                                <input id="anonymous" type="checkbox" name="review-type" class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-orange-500 rounded">
+                            <input id="anonymous" type="checkbox" name="review-type" class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-orange-500 rounded">
                                 <label for="anonymous" class="ml-2 text-xs md:text-sm text-gray-600">Review sebagai Anonim</label>
                             </div>
                         </div>
@@ -230,11 +230,13 @@
                         </div>
                         <div class="mt-4 md:mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                             <div class="text-sm text-gray-600">
-                                <p class="font-medium"><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i>Gormeteria, Bandung</p>
-                                <p class="text-xs mt-1">Buka setiap hari, 08:00-22:00</p>
+                                <p class="font-medium" id="deskripsiMapRestaurant">
+                                    <i class="fa-solid fa-location-dot text-orange-500 mr-2"></i>
+                                    test
+                                </p>
                             </div>
                             <!-- Tombol buat buka langsung ke Google Maps -->
-                            <a href="https://maps.google.com/?q=Gormeteria+Bandung" target="_blank" class="inline-flex items-center justify-center rounded-md bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold py-2 px-4 transition-colors shadow-sm">
+                            <a id="mapsRestaurant" target="_blank" class="inline-flex items-center justify-center rounded-md bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold py-2 px-4 transition-colors shadow-sm">
                                 <i class="fa-solid fa-external-link-alt mr-2"></i> Buka di Google Maps
                             </a>
                         </div>
@@ -247,6 +249,7 @@
     <!-- component -->
     <script src="./util/navbar-component.js"></script>
     <script src="./util/footer-component.js"></script>
+    <script src="./controller/controller.js"></script>
     <script src="controller/detail.js"></script>
 
     <style>
