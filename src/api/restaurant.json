@@ -1,0 +1,504 @@
+{
+    "restaurants": [
+        {
+            "id": 1,
+            "nama": "The Valley Bistro Cafe",
+            "id_city": 1,
+            "id_category": 1,
+            "id_price_range": 5,
+            "rating": 4.6,
+            "alamat": "Jl. Lembah Pakar Timur No. 28, Dago Pakar, Bandung",
+            "foto": "The Valley Bistro Cafe.jpg"
+        },
+        {
+            "id": 2,
+            "nama": "Kampung Daun",
+            "id_city": 1,
+            "id_category": 2,
+            "id_price_range": 3,
+            "rating": 4.7,
+            "alamat": "Jl. Sersan Bajuri No. 88, Bandung",
+            "foto": "Kampung Daun.jpg"
+        },
+        {
+            "id": 3,
+            "nama": "Hummingbird Eatery",
+            "id_city": 1,
+            "id_category": 9,
+            "id_price_range": 3,
+            "rating": 4.5,
+            "alamat": "Jl. Progo No. 14, Bandung",
+            "foto": "Hummingbird Eatery.jpg"
+        },
+        {
+            "id": 4,
+            "nama": "Sierra Cafe & Lounge",
+            "id_city": 1,
+            "id_category": 1,
+            "id_price_range": 4,
+            "rating": 4.6,
+            "alamat": "Jl. Bukit Pakar Timur No. 33, Bandung",
+            "foto": "Sierra Cafe & Lounge.jpg"
+        },
+        {
+            "id": 5,
+            "nama": "Lemongrass",
+            "id_city": 1,
+            "id_category": 9,
+            "id_price_range": 3,
+            "rating": 4.4,
+            "alamat": "Jl. Sawunggaling No. 2, Bandung",
+            "foto": "Lemongrass.jpg"
+        },
+        {
+            "id": 6,
+            "nama": "Bandar Djakarta Bekasi",
+            "id_city": 2,
+            "id_category": 5,
+            "id_price_range": 3,
+            "rating": 4.5,
+            "alamat": "Summarecon Mall Bekasi, Bekasi",
+            "foto": "Bandar Djakarta Bekasi.jpg"
+        },
+        {
+            "id": 7,
+            "nama": "Gubug Makan Mang Engking",
+            "id_city": 2,
+            "id_category": 2,
+            "id_price_range": 3,
+            "rating": 4.4,
+            "alamat": "Jl. Bulevar Utara, Summarecon, Bekasi",
+            "foto": "Gubug Makan Mang Engking.jpg"
+        },
+        {
+            "id": 8,
+            "nama": "Double U Steak",
+            "id_city": 2,
+            "id_category": 4,
+            "id_price_range": 4,
+            "rating": 4.6,
+            "alamat": "Jl. Wijaya Kusuma No. 183, Bekasi",
+            "foto": "Double U Steak.jpg"
+        },
+        {
+            "id": 9,
+            "nama": "Tsamara Resto",
+            "id_city": 2,
+            "id_category": 2,
+            "id_price_range": 3,
+            "rating": 4.3,
+            "alamat": "Jl. Raya Hankam, Jatisampurna, Bekasi",
+            "foto": "Tsamara Resto.jpg"
+        },
+        {
+            "id": 10,
+            "nama": "Bakmi GM",
+            "id_city": 2,
+            "id_category": 2,
+            "id_price_range": 1,
+            "rating": 4.5,
+            "alamat": "Metropolitan Mall, Bekasi",
+            "foto": "Bakmi GM.jpg"
+        },
+        {
+            "id": 11,
+            "nama": "Holycow! Steakhouse",
+            "id_city": 3,
+            "id_category": 4,
+            "id_price_range": 3,
+            "rating": 4.7,
+            "alamat": "Jl. Bintaro Utama 3A, Bintaro",
+            "foto": "Holycow! Steakhouse.jpg"
+        },
+        {
+            "id": 12,
+            "nama": "Talaga Sampireun",
+            "id_city": 3,
+            "id_category": 2,
+            "id_price_range": 3,
+            "rating": 4.6,
+            "alamat": "Kawasan Niaga Bintaro Sektor 7, Bintaro",
+            "foto": "Talaga Sampireun.jpg"
+        },
+        {
+            "id": 13,
+            "nama": "Lot 9",
+            "id_city": 3,
+            "id_category": 8,
+            "id_price_range": 2,
+            "rating": 4.4,
+            "alamat": "Jl. Bintaro Utama 9, Bintaro",
+            "foto": "Lot 9.jpg"
+        },
+        {
+            "id": 14,
+            "nama": "Pigeonhole Coffee",
+            "id_city": 3,
+            "id_category": 8,
+            "id_price_range": 1,
+            "rating": 4.5,
+            "alamat": "Jl. Merpati II, Bintaro Sektor 1, Bintaro",
+            "foto": "Pigeonhole Coffee.jpg"
+        },
+        {
+            "id": 15,
+            "nama": "Abuba Steak",
+            "id_city": 3,
+            "id_category": 4,
+            "id_price_range": 3,
+            "rating": 4.3,
+            "alamat": "Jl. Bintaro Utama 3A, Bintaro",
+            "foto": "Abuba Steak.jpg"
+        },
+        {
+            "id": 16,
+            "nama": "Sate Khas Senayan",
+            "id_city": 4,
+            "id_category": 2,
+            "id_price_range": 2,
+            "rating": 4.5,
+            "alamat": "Jl. Salemba Raya No. 57, Jakarta Pusat",
+            "foto": "Sate Khas Senayan.jpg"
+        },
+        {
+            "id": 17,
+            "nama": "Lara Djonggrang",
+            "id_city": 4,
+            "id_category": 1,
+            "id_price_range": 5,
+            "rating": 4.8,
+            "alamat": "Jl. Teuku Cik Ditiro No. 4, Menteng, Jakarta Pusat",
+            "foto": "Lara Djonggrang.jpg"
+        },
+        {
+            "id": 18,
+            "nama": "Seribu Rasa",
+            "id_city": 4,
+            "id_category": 5,
+            "id_price_range": 4,
+            "rating": 4.7,
+            "alamat": "Jl. H. Agus Salim No. 128, Menteng, Jakarta Pusat",
+            "foto": "Seribu Rasa.jpg"
+        },
+        {
+            "id": 19,
+            "nama": "Giyanti Coffee Roastery",
+            "id_city": 4,
+            "id_category": 8,
+            "id_price_range": 2,
+            "rating": 4.9,
+            "alamat": "Jl. Surabaya No. 20, Menteng, Jakarta Pusat",
+            "foto": "Giyanti Coffee Roastery.jpg"
+        },
+        {
+            "id": 20,
+            "nama": "Plataran Menteng",
+            "id_city": 4,
+            "id_category": 1,
+            "id_price_range": 5,
+            "rating": 4.8,
+            "alamat": "Jl. HOS. Cokroaminoto No. 42, Jakarta Pusat",
+            "foto": "Plataran Menteng.jpg"
+        },
+        {
+            "id": 21,
+            "nama": "Mie Gacoan",
+            "id_city": 5,
+            "id_category": 9,
+            "id_price_range": 1,
+            "rating": 4.2,
+            "alamat": "Jl. Margonda Raya, Depok",
+            "foto": "Mie Gacoan.jpg"
+        },
+        {
+            "id": 22,
+            "nama": "Waroeng SS",
+            "id_city": 5,
+            "id_category": 2,
+            "id_price_range": 1,
+            "rating": 4.4,
+            "alamat": "Jl. Margonda Raya, Depok",
+            "foto": "Waroeng SS.jpg"
+        },
+        {
+            "id": 23,
+            "nama": "Shabu Hachi",
+            "id_city": 5,
+            "id_category": 10,
+            "id_price_range": 4,
+            "rating": 4.6,
+            "alamat": "Jl. Margonda Raya No. 2, Depok",
+            "foto": "Shabu Hachi.jpg"
+        },
+        {
+            "id": 24,
+            "nama": "Mang Kabayan",
+            "id_city": 5,
+            "id_category": 2,
+            "id_price_range": 3,
+            "rating": 4.3,
+            "alamat": "Jl. Margonda Raya No. 488, Depok",
+            "foto": "Mang Kabayan.jpg"
+        },
+        {
+            "id": 25,
+            "nama": "Zoe Cafe & Library",
+            "id_city": 5,
+            "id_category": 8,
+            "id_price_range": 1,
+            "rating": 4.5,
+            "alamat": "Jl. Margonda Raya No. 27, Depok",
+            "foto": "Zoe Cafe & Library.jpg"
+        },
+        {
+            "id": 26,
+            "nama": "Ikkudo Ichi",
+            "id_city": 6,
+            "id_category": 6,
+            "id_price_range": 2,
+            "rating": 4.6,
+            "alamat": "Central Park Mall, Jakarta Barat",
+            "foto": "Ikkudo Ichi.jpg"
+        },
+        {
+            "id": 27,
+            "nama": "Layar Seafood",
+            "id_city": 6,
+            "id_category": 5,
+            "id_price_range": 4,
+            "rating": 4.7,
+            "alamat": "Jl. Pesanggrahan No. 80, Jakarta Barat",
+            "foto": "Layar Seafood.jpg"
+        },
+        {
+            "id": 28,
+            "nama": "Pizza e Birra",
+            "id_city": 6,
+            "id_category": 9,
+            "id_price_range": 3,
+            "rating": 4.4,
+            "alamat": "Puri Indah Mall, Jakarta Barat",
+            "foto": "Pizza e Birra.jpg"
+        },
+        {
+            "id": 29,
+            "nama": "Onyasai Shabu Shabu",
+            "id_city": 6,
+            "id_category": 10,
+            "id_price_range": 4,
+            "rating": 4.5,
+            "alamat": "Central Park Mall, Jakarta Barat",
+            "foto": "Onyasai Shabu Shabu.jpg"
+        },
+        {
+            "id": 30,
+            "nama": "Sushi Hiro",
+            "id_city": 6,
+            "id_category": 7,
+            "id_price_range": 3,
+            "rating": 4.8,
+            "alamat": "Lippo Mall Puri, Jakarta Barat",
+            "foto": "Sushi Hiro.jpg"
+        },
+        {
+            "id": 31,
+            "nama": "Bandar Djakarta Ancol",
+            "id_city": 7,
+            "id_category": 5,
+            "id_price_range": 3,
+            "rating": 4.5,
+            "alamat": "Taman Impian Jaya Ancol, Jakarta Utara",
+            "foto": "Bandar Djakarta Ancol.jpg"
+        },
+        {
+            "id": 32,
+            "nama": "Segarra",
+            "id_city": 7,
+            "id_category": 1,
+            "id_price_range": 5,
+            "rating": 4.6,
+            "alamat": "Taman Impian Jaya Ancol, Jakarta Utara",
+            "foto": "Segarra.jpg"
+        },
+        {
+            "id": 33,
+            "nama": "Sushi Masa",
+            "id_city": 7,
+            "id_category": 7,
+            "id_price_range": 5,
+            "rating": 4.9,
+            "alamat": "Jl. Tuna Raya No. 5, Muara Baru, Jakarta Utara",
+            "foto": "Sushi Masa.jpg"
+        },
+        {
+            "id": 34,
+            "nama": "Wingheng Hongkong Dimsum",
+            "id_city": 7,
+            "id_category": 9,
+            "id_price_range": 1,
+            "rating": 4.7,
+            "alamat": "Jl. Pluit Karang Utara, Jakarta Utara",
+            "foto": "Wingheng Hongkong Dimsum.jpg"
+        },
+        {
+            "id": 35,
+            "nama": "Born Ga",
+            "id_city": 7,
+            "id_category": 10,
+            "id_price_range": 4,
+            "rating": 4.6,
+            "alamat": "Jl. Boulevard Barat Raya, Kelapa Gading, Jakarta Utara",
+            "foto": "Born Ga.jpg"
+        },
+        {
+            "id": 36,
+            "nama": "Sushi Tei",
+            "id_city": 8,
+            "id_category": 7,
+            "id_price_range": 3,
+            "rating": 4.8,
+            "alamat": "Pondok Indah Mall 2, Jakarta Selatan",
+            "foto": "Sushi Tei.jpg"
+        },
+        {
+            "id": 37,
+            "nama": "Union",
+            "id_city": 8,
+            "id_category": 9,
+            "id_price_range": 4,
+            "rating": 4.7,
+            "alamat": "Pondok Indah Mall Street Gallery, Jakarta Selatan",
+            "foto": "Union.jpg"
+        },
+        {
+            "id": 38,
+            "nama": "Pagi Sore",
+            "id_city": 8,
+            "id_category": 2,
+            "id_price_range": 3,
+            "rating": 4.9,
+            "alamat": "Jl. Cipete Raya No. 2, Jakarta Selatan",
+            "foto": "Pagi Sore.jpg"
+        },
+        {
+            "id": 39,
+            "nama": "Le Quartier",
+            "id_city": 8,
+            "id_category": 1,
+            "id_price_range": 5,
+            "rating": 4.6,
+            "alamat": "Jl. Gunawarman No. 34, Jakarta Selatan",
+            "foto": "Le Quartier.jpg"
+        },
+        {
+            "id": 40,
+            "nama": "Filosofi Kopi",
+            "id_city": 8,
+            "id_category": 8,
+            "id_price_range": 1,
+            "rating": 4.3,
+            "alamat": "Jl. Melawai 6, Blok M, Jakarta Selatan",
+            "foto": "Filosofi Kopi.jpg"
+        },
+        {
+            "id": 41,
+            "nama": "Alam Wisata Cimahi",
+            "id_city": 9,
+            "id_category": 2,
+            "id_price_range": 2,
+            "rating": 4.3,
+            "alamat": "Jl. Kolonel Masturi KM 4, Cimahi",
+            "foto": "Alam Wisata Cimahi.jpg"
+        },
+        {
+            "id": 42,
+            "nama": "Rumah Makan Ciganea",
+            "id_city": 9,
+            "id_category": 2,
+            "id_price_range": 2,
+            "rating": 4.4,
+            "alamat": "Jl. Jend. H. Amir Machmud, Cimahi",
+            "foto": "Rumah Makan Ciganea.jpg"
+        },
+        {
+            "id": 43,
+            "nama": "Hashi Ramen",
+            "id_city": 9,
+            "id_category": 6,
+            "id_price_range": 2,
+            "rating": 4.5,
+            "alamat": "Jl. Lurah, Cimahi",
+            "foto": "Hashi Ramen.jpg"
+        },
+        {
+            "id": 44,
+            "nama": "Ampera",
+            "id_city": 9,
+            "id_category": 2,
+            "id_price_range": 2,
+            "rating": 4.2,
+            "alamat": "Jl. Jend. H. Amir Machmud, Cimahi",
+            "foto": "Ampera.jpg"
+        },
+        {
+            "id": 45,
+            "nama": "Kalem Coffe",
+            "id_city": 9,
+            "id_category": 8,
+            "id_price_range": 1,
+            "rating": 4.3,
+            "alamat": "Jl. Encep Kartawiria, Cimahi",
+            "foto": "Kalem Coffe.jpg"
+        },
+        {
+            "id": 46,
+            "nama": "Hanamasa",
+            "id_city": 10,
+            "id_category": 10,
+            "id_price_range": 4,
+            "rating": 4.4,
+            "alamat": "Tamini Square, Jakarta Timur",
+            "foto": "Hanamasa.jpg"
+        },
+        {
+            "id": 47,
+            "nama": "Sate Padang Ajo Ramon",
+            "id_city": 10,
+            "id_category": 3,
+            "id_price_range": 2,
+            "rating": 4.6,
+            "alamat": "Jl. Balai Pustaka Timur, Rawamangun, Jakarta Timur",
+            "foto": "Sate Padang Ajo Ramon.jpg"
+        },
+        {
+            "id": 48,
+            "nama": "Abunawas Restaurant",
+            "id_city": 10,
+            "id_category": 2,
+            "id_price_range": 4,
+            "rating": 4.5,
+            "alamat": "Jl. Matraman Raya No. 15, Jakarta Timur",
+            "foto": "Abunawas Restaurant.jpg"
+        },
+        {
+            "id": 49,
+            "nama": "Riung Tenda",
+            "id_city": 10,
+            "id_category": 2,
+            "id_price_range": 2,
+            "rating": 4.4,
+            "alamat": "Jl. Balai Pustaka, Rawamangun, Jakarta Timur",
+            "foto": "Riung Tenda.jpg"
+        },
+        {
+            "id": 50,
+            "nama": "Quiznos Sub",
+            "id_city": 10,
+            "id_category": 3,
+            "id_price_range": 2,
+            "rating": 4.3,
+            "alamat": "Jl. Pemuda, Rawamangun, Jakarta Timur",
+            "foto": "Quiznos Sub.jpg"
+        }
+        ]
+}

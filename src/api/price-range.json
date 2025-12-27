@@ -1,0 +1,24 @@
+{
+    "price_ranges": [
+        {
+            "id": 1,
+            "price_range": "Rp. 10.000 - Rp. 50.000"
+        },
+        {
+            "id": 2,
+            "price_range": "Rp. 51.000 - Rp. 100.000"
+        },
+        {
+            "id": 3,
+            "price_range": "Rp. 101.000 - Rp. 150.000"
+        },
+        {
+            "id": 4,
+            "price_range": "Rp. 151.000 - Rp. 200.000"
+        },
+        {
+            "id": 5,
+            "price_range": "Rp. 201.000++"
+        }
+    ] 
+}

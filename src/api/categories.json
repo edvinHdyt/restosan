@@ -1,0 +1,44 @@
+{
+    "restaurants": [
+        {
+            "id": 1,
+            "category": "Fine Dining"
+        },
+        {
+            "id": 2,
+            "category": "Family Restaurant"
+        },
+        {
+            "id": 3,
+            "category": "Fast Food"
+        },
+        {
+            "id": 4,
+            "category": "Steakhouse"
+        },
+        {
+            "id": 5,
+            "category": "Seafood Restaurant"
+        },
+        {
+            "id": 6,
+            "category": "Ramen Shop"
+        },
+        {
+            "id": 7,
+            "category": "Sushi Bar"
+        },
+        {
+            "id": 8,
+            "category": "Cafe/Coffee Shop"
+        },
+        {
+            "id": 9,
+            "category": "Fast Casual"
+        },
+        {
+            "id": 10,
+            "category": "All You Can Eat"
+        }
+    ]
+}
