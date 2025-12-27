@@ -128,3 +128,15 @@ window.onclick = function (event) {
     }
   }
 };
+
+
+const initial = async () => {
+    let res = await fetch("https://dummyjson.com/c/1ddf-ab2f-4455-926a");
+    let dataRestaurants = await res.json();
+    dataRestaurants = dataRestaurants["restaurants"].map(e => e).filter((data) => parseFloat(data["rating"]) > 4.5 );
+
+    console.log(dataRestaurants);
+}
+
+
+initial();
