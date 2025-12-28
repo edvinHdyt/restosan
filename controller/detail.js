@@ -124,7 +124,6 @@ function updateRatingStats() {
         totalScore += rating * ratingCounts[rating];
     }
 
-    
     const averageRating = (totalScore / totalReviews).toFixed(1);
     const averageRatingElement = document.getElementById('averageRating');
     if (averageRatingElement) averageRatingElement.innerText = averageRating;
@@ -187,7 +186,7 @@ function submitReview() {
     let d = new Date();
     
     let obj = {
-        id_user : 1,
+        id_user : userLogin.id,
         id_restaurant: idRestaurant,
         rating: currentRating,
         comment: text,

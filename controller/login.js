@@ -14,6 +14,9 @@ document.addEventListener('click', () => {
     case "login":
       loginProses();
       break;
+    case "register": 
+      registerProsses();
+      break;
     case "closeAlert":
       closeAlertModal();
       break;
@@ -56,12 +59,42 @@ async function loginProses(){
     nama : dataUsers[0].nama,
     profile_pict: dataUsers[0].profile_pict
   };
-  console.log(JSON.stringify(obj));
 
   localStorage.setItem(STORAGE_KEY_USER_LOGIN, JSON.stringify(obj));
   window.location.href = "index.html";
 }
 
+
+function registerProsses(){
+  let usernameInput = document.getElementById("username").value;
+  let emailInput = document.getElementById("email").value;
+  let passInput = document.getElementById("password").value;
+  let confPassInput = document.getElementById("confPass").value;
+
+
+  if (emailInput == "" || passInput == "" || usernameInput == "" || confPassInput == ""){
+      showAlertModals("Semua kolom harus diisi!");
+      return;
+  }
+
+  if (passInput != confPassInput){
+    showAlertModals("Kata sandi dan konfirmasi harus sama!");
+    
+    return;
+  }
+
+  const idUser = Math.floor(8 + Math.random() * 100);
+
+  let obj = {
+    id: idUser,
+    email : emailInput,
+    nama : usernameInput,
+    password: MD5(unescape(encodeURIComponent(passInput)))
+  }
+
+  localStorage.setItem(STORAGE_KEY_USER_LOGIN, JSON.stringify(obj));
+  window.location.href = "index.html";
+}
 
 function showAlertModals(msg){
   const modalAlert = document.getElementById("alertModal");
@@ -79,3 +112,4 @@ function closeAlertModal() {
         modalAlert.classList.add('hidden');
     }, 300);
 }
+
