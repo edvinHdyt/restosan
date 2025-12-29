@@ -21,7 +21,7 @@ document.addEventListener("click", function(){
 });
 
 function slideRight(btn) {
-        const slider = btn.parentElement.querySelector('.slider-container');
+      const slider = btn.parentElement.querySelector('.slider-container');
         const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
         if (slider.scrollLeft >= maxScrollLeft - 5) {
             slider.scrollTo({ left: 0, behavior: 'smooth' });

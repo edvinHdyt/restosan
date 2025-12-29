@@ -16,14 +16,6 @@ document.addEventListener("click", function(){
       localStorage.removeItem(STORAGE_KEY_USER_LOGIN);
       window.location.href = "login.html"
       break;
-    // case "filterKota":
-    //   let idKota = event.target.dataset["value"];
-    //   let obj = {
-    //     idKota : parseInt(idKota)
-    //   }
-
-    //   showRestaurants(obj);
-    //   break;
     default:
       break;
   }
@@ -126,24 +118,10 @@ function manipulateDropdownProfile(){
   }
 }
 
-function toggleDropdown() {
-  const menu = document.getElementById("kotaMenu");
-  if (menu.classList.contains("hidden")) {
-    menu.classList.remove("hidden");
-  } else {
-    menu.classList.add("hidden");
-  }
-}
 
-window.onclick = function (event) {
-  if (!event.target.closest("#kotaBtn")) {
-    const menu = document.getElementById("kotaMenu");
-    if (!menu == null && !menu.classList.contains("hidden")) {
-      menu.classList.add("hidden");
-    }
-  }
-};
-
-
-
+// document.getElementById('searchInput').addEventListener('keypress', function (e) {
+//   if (e.key === "Enter") {
+//     window.location.href = "/hasilsearch.html"
+//   }
+// });
 
