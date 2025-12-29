@@ -97,13 +97,23 @@ class Navbar extends HTMLElement {
                       <a href="index.html" class="hover:text-white hover:font-bold transition-all">Dashboard</a>
                       <a href="index.html#contact-us" class="hover:text-white hover:font-bold transition-all">Contact Us</a>
                   </nav>
-                  ${profilePict}
+                  <div id="defaultPictShow">
+                    ${profilePict}
+                  </div>
+                    <div id="changePictShow" class="hidden">
+                        <img src="" class="w-10 h-10 cursor-pointer rounded-full ml-3" data-id="showDropdownProfile" id="showProfileNav">
+                    </div>
                   </div>
                   <div class="flex md:hidden">
                   <button class="bg-orange-500 text-white p-2 rounded border border-gray-50 cursor-pointer" data-id="showDropdownNavbar">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-id="showDropdownNavbar"><path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" data-id="showDropdownNavbar"/></svg>
                   </button>
+                    <div id="defaultPictShow">
                     ${profilePict}
+                  </div>
+                    <div id="changePictShow" class="hidden">
+                        <img src="" class="w-10 h-10 cursor-pointer rounded-full ml-3" data-id="showDropdownProfile" id="showProfileNav">
+                    </div>
                   </div>
               </div>
           </div>
@@ -229,13 +239,23 @@ class NavbarSearch extends HTMLElement {
                       <a href="index.html" class="hover:text-white hover:font-bold transition-all">Dashboard</a>
                       <a href="index.html#contact-us" class="hover:text-white hover:font-bold transition-all">Contact Us</a>
                   </nav>
-                  ${profilePict}
+                  <div id="defaultPictShow">
+                    ${profilePict}
+                  </div>
+                    <div id="changePictShow" class="hidden">
+                       <img class="w-10 h-10 cursor-pointer rounded-full ml-3" data-id="showDropdownProfile" id="showProfileNav">
+                    </div>
                   </div>
                   <div class="flex md:hidden">
                   <button class="bg-orange-500 text-white p-2 rounded border border-gray-50 cursor-pointer" data-id="showDropdownNavbar">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-id="showDropdownNavbar"><path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" data-id="showDropdownNavbar"/></svg>
                   </button>
-                  ${profilePict}
+                  <div id="responsiveDefaultPictShow">
+                    ${profilePict}
+                  </div>
+                    <div id="responsiveChangePictShow" class="hidden">
+                        <img  class="w-10 h-10 cursor-pointer rounded-full ml-3" data-id="showDropdownProfile" id="responsiveShowProfileNav">
+                    </div>
                   </div>
               </div>
           </div>
