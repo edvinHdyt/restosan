@@ -71,8 +71,21 @@ const initialzeSearch = async() => {
 
     let dataRating = JSON.parse(localStorage.getItem(STORAGE_KEY_RATING));
 
-    if (dataRestaurants.length == 0){
-      restaurantsContainer.innerText = "Restaurant tidak ditemukan";
+   if (dataRestaurants.length == 0){
+      restaurantsContainer.classList.remove("grid");
+      restaurantsContainer.classList.add("flex");
+      restaurantsContainer.classList.add("items-center");
+      restaurantsContainer.classList.add("justify-center");
+
+      const h1 = document.createElement("h1");
+      h1.setAttribute("class", "text-gray-500 text-xl mt-10");
+      h1.innerText =  "Restaurant tidak ditemukan";
+      restaurantsContainer.appendChild(h1);
+    }else {
+      restaurantsContainer.classList.add("grid");
+      restaurantsContainer.classList.remove("flex");
+      restaurantsContainer.classList.remove("items-center");
+      restaurantsContainer.classList.remove("justify-center");
     }
     
     Array.from(dataRestaurants).forEach(elm => {

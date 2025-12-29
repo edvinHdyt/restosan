@@ -166,7 +166,6 @@ const showRestaurants = async(params) => {
           return data["rating"] >= parseFloat(params.ratingRange) && data["rating"] < parseFloat(params.ratingRange) + 1;
         });
 
-        console.log(dataRating)
 
         let tempDataRestaurant = [];
 
@@ -181,8 +180,25 @@ const showRestaurants = async(params) => {
         dataRestaurants = tempDataRestaurant;
     }
 
-    if (dataRestaurants.length == 0){
-      restaurantsContainer.innerText = "Restaurant tidak ditemukan";
+    console.log(dataRestaurants)
+
+    
+    
+   if (dataRestaurants.length == 0){
+      restaurantsContainer.classList.remove("grid");
+      restaurantsContainer.classList.add("flex");
+      restaurantsContainer.classList.add("items-center");
+      restaurantsContainer.classList.add("justify-center");
+
+      const h1 = document.createElement("h1");
+      h1.setAttribute("class", "text-gray-500 text-xl mt-10");
+      h1.innerText =  "Restaurant tidak ditemukan";
+      restaurantsContainer.appendChild(h1);
+    }else {
+      restaurantsContainer.classList.add("grid");
+      restaurantsContainer.classList.remove("flex");
+      restaurantsContainer.classList.remove("items-center");
+      restaurantsContainer.classList.remove("justify-center");
     }
     
     Array.from(dataRestaurants).forEach(elm => {
