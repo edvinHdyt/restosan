@@ -31,7 +31,7 @@
         <div class="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg mb-6 md:mb-8">
             <!-- Gambar Restoran -->
             <div class="bg-gray-200 rounded-xl md:rounded-2xl h-[250px] sm:h-[300px] md:h-[400px] w-full flex items-center justify-center mb-6 md:mb-8 overflow-hidden">
-                <img src="./Gambar/RestaurantDisplay/Restaurant2.jpeg" alt="Contoh Gambar Restoran" class="w-full h-full object-cover">
+                <img src="./Gambar/RestaurantDisplay/Restaurant2.jpeg" alt="Contoh Gambar Restoran" class="w-full h-full object-cover" id="gambarRestaurant">
             </div>
             <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2" id="restaurantName">Warung Padang Sederhana</h1>
             <div class="flex items-center mb-4 md:mb-6">
@@ -220,7 +220,7 @@
                         <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Lokasi Restoran</h3>
                         <div class="map-container h-[300px] md:h-[400px] rounded-lg overflow-hidden shadow-md">
                             <!-- Embed Google Maps -->
-                            <iframe 
+                            <iframe id="restaurantMaps"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.7890081437745!2d107.608852!3d-6.914012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e669e47ad56b%3A0xa3947cf57464652b!2sGormeteria!5e0!3m2!1sen!2sid!4v1621234567890!5m2!1sen!2sid" 
                                 allowfullscreen="" 
                                 loading="lazy" 

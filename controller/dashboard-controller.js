@@ -106,7 +106,7 @@ const showRestaurants = async(params) => {
     const restaurantsContainer = document.getElementById("restaurantSection");
     restaurantsContainer.innerHTML = "";
 
-    let res = await fetch("https://dummyjson.com/c/0259-d778-49b7-a921");
+    let res = await fetch("https://dummyjson.com/c/4e56-4272-4630-904c");
     let dataRestaurants = await res.json();
 
     if (params != undefined){
@@ -169,9 +169,9 @@ const showRestaurants = async(params) => {
         article.innerHTML = `
         <div class="h-48 bg-gray-200 relative group/slider">
             <div class="slider-container flex overflow-x-auto snap-x snap-mandatory h-full w-full scroll-smooth">
-              <img src="./Gambar/RestaurantDisplay/baliRestuarant.jpg" alt="Steak 1" class="w-full h-full object-cover flex-shrink-0 snap-center" />
-              <img src="./Gambar/RestaurantDisplay/Restaurant2.jpeg" alt="Steak 2" class="w-full h-full object-cover flex-shrink-0 snap-center" />
-              <img src="./Gambar/RestaurantDisplay/Restaurant3.jpg" alt="Steak 3" class="w-full h-full object-cover flex-shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][0]}" alt="Steak 1" class="w-full h-full object-cover shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][1]}" alt="Steak 2" class="w-full h-full object-cover shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][2]}" alt="Steak 3" class="w-full h-full object-cover shrink-0 snap-center" />
             </div>
             <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1 z-10"><i class="fa-solid fa-star text-yellow-400"></i> ${rating[0].rating}</div>
             <button

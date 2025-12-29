@@ -415,8 +415,10 @@ const loadContentDeteail = async () => {
     const restaurantDesc = document.getElementById("restaurantDesc");
     const mapsRestaurant = document.getElementById("mapsRestaurant");
     const descMapRestaurant = document.getElementById("deskripsiMapRestaurant");
+    const gambarRestaurant = document.getElementById("gambarRestaurant");
+    const restaurantMaps = document.getElementById("restaurantMaps");
 
-    let res = await fetch("https://dummyjson.com/c/0259-d778-49b7-a921");
+    let res = await fetch("https://dummyjson.com/c/4e56-4272-4630-904c");
     let dataRestaurants = await res.json();
 
     dataRestaurants = dataRestaurants["restaurants"].map(e => e).filter((data) => data["id"] == idRestaurant);
@@ -433,13 +435,13 @@ const loadContentDeteail = async () => {
     restaurantRating.innerText = rating[0].rating;
     restaurantLocation.innerText = `(${kota[0].kota})`;
     restaurantDesc.innerText = dataRestaurants[0].description;
-    // console.log(dataRestaurants[0].link_maps);
     descMapRestaurant.innerHTML = `
     <i class="fa-solid fa-location-dot text-orange-500 mr-2"></i>
     ${dataRestaurants[0].nama}, ${kota[0].kota}
     `
+    gambarRestaurant.src = `./Gambar/RestaurantImage/${dataRestaurants[0]["nama"]}/${dataRestaurants[0]["foto"][0]}`;
 
-
+    restaurantMaps.src = dataRestaurants[0].link_maps_embed;
     mapsRestaurant.href = dataRestaurants[0].link_maps;
 }
 
