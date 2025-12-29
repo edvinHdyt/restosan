@@ -180,6 +180,10 @@ const showRestaurants = async(params) => {
 
         dataRestaurants = tempDataRestaurant;
     }
+
+    if (dataRestaurants.length == 0){
+      restaurantsContainer.innerText = "Restaurant tidak ditemukan";
+    }
     
     Array.from(dataRestaurants).forEach(elm => {
         const article = document.createElement("article");

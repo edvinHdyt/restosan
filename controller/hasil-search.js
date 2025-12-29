@@ -70,6 +70,10 @@ const initialzeSearch = async() => {
     dataPrices = dataPrices["price_ranges"];
 
     let dataRating = JSON.parse(localStorage.getItem(STORAGE_KEY_RATING));
+
+    if (dataRestaurants.length == 0){
+      restaurantsContainer.innerText = "Restaurant tidak ditemukan";
+    }
     
     Array.from(dataRestaurants).forEach(elm => {
         const article = document.createElement("article");
