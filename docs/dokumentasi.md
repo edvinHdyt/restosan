@@ -49,27 +49,65 @@ Restosan adalah sebuah website yang membantu pengguna menemukan berbagai macam r
 
 ## 4. Struktur Halaman (Sitemap)
 
-Beranda  
-├── Search  
-├── Contact Us  
-└── List
-
----
+![Hierarki Halaman Restosan](Hierarki.png)
 
 ## 5. Bukti Responsivitas & Tampilan
 
-### Halaman Beranda
+### 5.1 Dashboard
 
 **Mobile**
-
-
+![Dashboard Mobile](DashboardMobile.png)
 **Tablet**
-
-
+![Dashboard Tablet](DashboardTablet.png)
 **Desktop**
+![Dashboard Dekstop](DashboardDekstop.png)
+
+### 5.2 Detail Restoran
+
+**Mobile**
+**Tablet**
+**Desktop**
+
+### 5.3 Hasil Pencarian
+
+**Mobile**
+![Hasil Pencarian Mobile](HasilSearchMobile.png)
+**Tablet**
+![Hasil Search Tablet](HasilSearchTablet.png)
+**Desktop**
+![Hasil Search Dekstop](HasilSearchDekstop.png)
+
+### 5.4 Login
+
+**Mobile**
+![Login Mobile](LoginMobile.png)
+**Tablet**
+![Login Tablet](LoginTablet.png)
+**Desktop**
+![Login Dekstop](LoginDekstop.png)
+
+### 5.5 Register
+
+**Mobile**
+![Register Mobile](RegisterMobile.png)
+**Tablet**
+![Register Tablet](RegisterTablet.png)
+**Desktop**
+![Register Laptop](RegisterDekstop.png)
+
+
+### 5.6 Profile
+
+**Mobile**
+![Profile Mobile](ProfileMobile.png)
+**Tablet**
+![Profile Tablet](ProfileTablet.png)
+**Desktop**
+![Profile Dekstop](ProfileDekstop.png)
 
 
 
 ## 6. Bukti Aksesibilitas
-
 Berikut adalah hasil pengecekan aksesibilitas 
+![Aksesibilitas](Aksesibilitas.png)
+
