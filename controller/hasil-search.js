@@ -21,7 +21,7 @@ document.addEventListener("click", function(){
 });
 
 function slideRight(btn) {
-        const slider = btn.parentElement.querySelector('.slider-container');
+      const slider = btn.parentElement.querySelector('.slider-container');
         const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
         if (slider.scrollLeft >= maxScrollLeft - 5) {
             slider.scrollTo({ left: 0, behavior: 'smooth' });
@@ -48,7 +48,7 @@ const initialzeSearch = async() => {
     const restaurantsContainer = document.getElementById("searchContainer");
     restaurantsContainer.innerHTML = "";
 
-    let res = await fetch("https://dummyjson.com/c/0259-d778-49b7-a921");
+    let res = await fetch("https://dummyjson.com/c/4e56-4272-4630-904c");
     let dataRestaurants = await res.json();
 
     dataRestaurants = dataRestaurants["restaurants"].map(e => e).filter((data) => {
@@ -70,6 +70,23 @@ const initialzeSearch = async() => {
     dataPrices = dataPrices["price_ranges"];
 
     let dataRating = JSON.parse(localStorage.getItem(STORAGE_KEY_RATING));
+
+   if (dataRestaurants.length == 0){
+      restaurantsContainer.classList.remove("grid");
+      restaurantsContainer.classList.add("flex");
+      restaurantsContainer.classList.add("items-center");
+      restaurantsContainer.classList.add("justify-center");
+
+      const h1 = document.createElement("h1");
+      h1.setAttribute("class", "text-gray-500 text-xl mt-10");
+      h1.innerText =  "Restaurant tidak ditemukan";
+      restaurantsContainer.appendChild(h1);
+    }else {
+      restaurantsContainer.classList.add("grid");
+      restaurantsContainer.classList.remove("flex");
+      restaurantsContainer.classList.remove("items-center");
+      restaurantsContainer.classList.remove("justify-center");
+    }
     
     Array.from(dataRestaurants).forEach(elm => {
         const article = document.createElement("article");
@@ -102,9 +119,9 @@ const initialzeSearch = async() => {
         article.innerHTML = `
         <div class="h-48 bg-gray-200 relative group/slider">
             <div class="slider-container flex overflow-x-auto snap-x snap-mandatory h-full w-full scroll-smooth">
-              <img src="./Gambar/RestaurantDisplay/baliRestuarant.jpg" alt="Steak 1" class="w-full h-full object-cover shrink-0 snap-center" />
-              <img src="./Gambar/RestaurantDisplay/Restaurant2.jpeg" alt="Steak 2" class="w-full h-full object-cover shrink-0 snap-center" />
-              <img src="./Gambar/RestaurantDisplay/Restaurant3.jpg" alt="Steak 3" class="w-full h-full object-cover shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][0]}" alt="Steak 1" class="w-full h-full object-cover shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][1]}" alt="Steak 2" class="w-full h-full object-cover shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][2]}" alt="Steak 3" class="w-full h-full object-cover shrink-0 snap-center" />
             </div>
             <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1 z-10"><i class="fa-solid fa-star text-yellow-400"></i> ${rating[0].rating}</div>
             <button

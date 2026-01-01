@@ -1,14 +1,8 @@
 document.addEventListener("click", function(){
   const strId = event.target.dataset['id'];
-
   switch (strId) {
-    case "filterKota":
-      let idKota = event.target.dataset["value"];
-      let obj = {
-        idKota : parseInt(idKota)
-      }
-
-      showRestaurants(obj);
+    case "filtering":
+      filterProcess();
       break;
     case "searchRestaurant":
         let searchInput = document.getElementById("searchDashboard");
@@ -47,28 +41,45 @@ window.onclick = function (event) {
 };
 
 function slideRight(btn) {
-        const slider = btn.parentElement.querySelector('.slider-container');
-        const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-        if (slider.scrollLeft >= maxScrollLeft - 5) {
-            slider.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-            slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
-        }
-    }
+  const slider = btn.parentElement.querySelector('.slider-container');
+      const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+      if (slider.scrollLeft >= maxScrollLeft - 5) {
+          slider.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+          slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
+      }
+  }
 
-    function slideLeft(btn) {
-        const slider = btn.parentElement.querySelector('.slider-container');
-        const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-        if (slider.scrollLeft <= 5) {
-            slider.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
-        } else {
-            slider.scrollBy({ left: -slider.clientWidth, behavior: 'smooth' });
-        }
-    }
+  function slideLeft(btn) {
+    const slider = btn.parentElement.querySelector('.slider-container');
+      const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+      if (slider.scrollLeft <= 5) {
+          slider.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
+      } else {
+          slider.scrollBy({ left: -slider.clientWidth, behavior: 'smooth' });
+      }
+  }
 
+const initial = async () => {
+    const kotaMenu = document.getElementById("kotaMenu");
+    let res = await fetch("https://dummyjson.com/c/5a11-e1c4-4b69-bc14");
+    let dataCities = await res.json();
+    dataCities = dataCities["cities"];
 
-    const initial = async () => {
-    showKota();
+    const kategoriMenu = document.getElementById("kategoriMenu");
+    res = await fetch("https://dummyjson.com/c/0667-2db6-48f4-a001");
+    let dataKategori = await res.json();
+    dataKategori = dataKategori["categories"];
+
+    const hargaMenu = document.getElementById("hargaMenu");
+    res = await fetch("https://dummyjson.com/c/196c-0e3f-4240-82cc");
+    let dataHarga = await res.json();
+    dataHarga = dataHarga["price_ranges"];
+
+    
+    addFilterChild(kotaMenu, dataCities, "kota");
+    addFilterChild(kategoriMenu, dataKategori, "category");
+    addFilterChild(hargaMenu, dataHarga, "price_range");
 
     let ratings = localStorage.getItem(STORAGE_KEY_RATING);
     if(ratings == undefined){
@@ -81,24 +92,38 @@ function slideRight(btn) {
     showRestaurants();
 }
 
-const showKota = async() => {
-    const kotaMenu = document.getElementById("kotaMenu");
-    const res = await fetch("https://dummyjson.com/c/5a11-e1c4-4b69-bc14");
-    let dataCities = await res.json();
-    dataCities = dataCities["cities"];
+const filterProcess = () => {
+  const ratingBtn = document.getElementById("ratingBtn");
+  const kotaBtn = document.getElementById("kotaBtn");
+  const kategoriBtn = document.getElementById("kategoriBtn");
+  const hargaBtn = document.getElementById("hargaBtn");
 
-    Array.from(dataCities).forEach(elm => {
+  console.log(ratingBtn.dataset["selected"]);
+
+  let obj = {
+    idKota : kotaBtn.dataset["selected"],
+    idCategory : kategoriBtn.dataset["selected"],
+    idPrice : hargaBtn.dataset["selected"],
+    ratingRange: ratingBtn.dataset["selected"]
+  }
+
+  showRestaurants(obj);
+}
+
+
+const addFilterChild = async(element, data, dataName) => {    
+     Array.from(data).forEach(elm => {
         const a = document.createElement("a");
-        a.setAttribute("class", "flex items-center px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 cursor-pointer");
-        a.setAttribute("data-id", "filterKota");
+        a.setAttribute("class", "filter-option flex items-center px-4 py-2 hover:bg-gray-50 text-sm text-gray-700 transition-all duration-150 hover:translate-x-1 hover:text-gray-900");
+        a.setAttribute("data-id", "filtering");
         a.setAttribute("data-value", elm["id"]);
 
         a.innerHTML = `
         <div class="w-4 h-4 mr-2"></div>
-        ${elm["kota"]}
+        ${elm[dataName]}
         `;
 
-        kotaMenu.appendChild(a);
+        element.appendChild(a);
     });
 }
 
@@ -106,16 +131,15 @@ const showRestaurants = async(params) => {
     const restaurantsContainer = document.getElementById("restaurantSection");
     restaurantsContainer.innerHTML = "";
 
-    let res = await fetch("https://dummyjson.com/c/0259-d778-49b7-a921");
+    let res = await fetch("https://dummyjson.com/c/4e56-4272-4630-904c");
     let dataRestaurants = await res.json();
 
     if (params != undefined){
       dataRestaurants = dataRestaurants["restaurants"].map(e => e).filter((data) => {
         return (
-          (!params.idRating  || data.id_rating === params.idRating) &&
-          (!params.idKota    || data["id_city"] === params.idKota) &&
-          (!params.idCategory|| data.id_category === params.idCategory) &&
-          (!params.idPrice   || data.id_price_range === params.idPrice) &&
+          (!params.idKota    || data["id_city"] === parseInt(params.idKota)) &&
+          (!params.idCategory|| data["id_category"] === parseInt(params.idCategory)) &&
+          (!params.idPrice   || data["id_price_range"] === parseInt(params.idPrice)) &&
           (!params.nama_restaurant || data["nama"].toLowerCase().includes(params.nama_restaurant))
         );
       } );
@@ -136,6 +160,46 @@ const showRestaurants = async(params) => {
     dataPrices = dataPrices["price_ranges"];
 
     let dataRating = JSON.parse(localStorage.getItem(STORAGE_KEY_RATING));
+
+    if(params != undefined && params.ratingRange != undefined){
+        dataRating = dataRating.filter((data) => {
+          return data["rating"] >= parseFloat(params.ratingRange) && data["rating"] < parseFloat(params.ratingRange) + 1;
+        });
+
+
+        let tempDataRestaurant = [];
+
+        Array.from(dataRating).forEach(elm => {
+          Array.from(dataRestaurants).forEach(restaurant => {
+            if(restaurant["id"] == elm["id_restaurant"]){
+              tempDataRestaurant.push(restaurant);
+            }
+          });
+        });
+
+        dataRestaurants = tempDataRestaurant;
+    }
+
+    console.log(dataRestaurants)
+
+    
+    
+   if (dataRestaurants.length == 0){
+      restaurantsContainer.classList.remove("grid");
+      restaurantsContainer.classList.add("flex");
+      restaurantsContainer.classList.add("items-center");
+      restaurantsContainer.classList.add("justify-center");
+
+      const h1 = document.createElement("h1");
+      h1.setAttribute("class", "text-gray-500 text-xl mt-10");
+      h1.innerText =  "Restaurant tidak ditemukan";
+      restaurantsContainer.appendChild(h1);
+    }else {
+      restaurantsContainer.classList.add("grid");
+      restaurantsContainer.classList.remove("flex");
+      restaurantsContainer.classList.remove("items-center");
+      restaurantsContainer.classList.remove("justify-center");
+    }
     
     Array.from(dataRestaurants).forEach(elm => {
         const article = document.createElement("article");
@@ -148,7 +212,6 @@ const showRestaurants = async(params) => {
             namaRestaurant = namaRestaurant.substring(0, last);
             namaRestaurant += "...";
         }
-
 
         let category = dataCategories.filter((data) => {
           return data["id"] == elm["id_category"];
@@ -169,9 +232,9 @@ const showRestaurants = async(params) => {
         article.innerHTML = `
         <div class="h-48 bg-gray-200 relative group/slider">
             <div class="slider-container flex overflow-x-auto snap-x snap-mandatory h-full w-full scroll-smooth">
-              <img src="./Gambar/RestaurantDisplay/baliRestuarant.jpg" alt="Steak 1" class="w-full h-full object-cover flex-shrink-0 snap-center" />
-              <img src="./Gambar/RestaurantDisplay/Restaurant2.jpeg" alt="Steak 2" class="w-full h-full object-cover flex-shrink-0 snap-center" />
-              <img src="./Gambar/RestaurantDisplay/Restaurant3.jpg" alt="Steak 3" class="w-full h-full object-cover flex-shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][0]}" alt="Steak 1" class="w-full h-full object-cover shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][1]}" alt="Steak 2" class="w-full h-full object-cover shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][2]}" alt="Steak 3" class="w-full h-full object-cover shrink-0 snap-center" />
             </div>
             <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1 z-10"><i class="fa-solid fa-star text-yellow-400"></i> ${rating[0].rating}</div>
             <button
@@ -209,4 +272,196 @@ const showRestaurants = async(params) => {
 }
 
 
-initial();
+class FilterDropdown {
+  constructor() {
+    this.activeMenu = null;
+    this.init();
+  }
+
+  init() {
+    // Setup event listeners for each filter button
+    const filters = [
+      { btn: 'ratingBtn', menu: 'ratingMenu', icon: 'ratingIcon' },
+      { btn: 'kotaBtn', menu: 'kotaMenu', icon: 'kotaIcon' },
+      { btn: 'kategoriBtn', menu: 'kategoriMenu', icon: 'kategoriIcon' },
+      { btn: 'hargaBtn', menu: 'hargaMenu', icon: 'hargaIcon' }
+    ];
+
+    
+
+    filters.forEach(({ btn, menu, icon }) => {
+      const button = document.getElementById(btn);
+      const dropdown = document.getElementById(menu);
+      const arrowIcon = document.getElementById(icon);
+
+      if (button && dropdown) {
+        button.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.toggleMenu(menu, icon, button);
+        });
+
+        // Add click listeners to menu items
+        dropdown.querySelectorAll('.filter-option').forEach(item => {
+          item.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.selectOption(button, item.textContent.trim(), item.getAttribute('data-value'));
+            this.closeAllMenus();
+          });
+        });
+      }
+    });
+
+    // Clear filters button
+    const clearBtn = document.getElementById('clearFilters');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => this.clearAllFilters());
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', () => this.closeAllMenus());
+    
+    // Close dropdowns when pressing Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') this.closeAllMenus();
+    });
+  }
+
+  toggleMenu(menuId, iconId, button) {
+    const menu = document.getElementById(menuId);
+    const icon = document.getElementById(iconId);
+    
+    // If this menu is already active, close it
+    if (this.activeMenu === menuId) {
+      this.closeMenu(menu, icon, button);
+      this.activeMenu = null;
+      return;
+    }
+    
+    // Close any open menu first
+    this.closeAllMenus();
+    
+    // Open the clicked menu
+    this.openMenu(menu, icon, button);
+    this.activeMenu = menuId;
+  }
+
+  openMenu(menu, icon, button) {
+    if (!menu || !icon) return;
+    
+    menu.classList.remove('hidden', 'opacity-0', 'translate-y-1');
+    menu.classList.add('block', 'opacity-100', 'translate-y-0');
+    icon.classList.remove('rotate-0');
+    icon.classList.add('rotate-180');
+    
+    // Add active state to button
+    if (button) {
+      button.classList.add('border-gray-400', 'bg-gray-100', 'text-gray-800');
+      button.classList.remove('border-gray-300', 'bg-white');
+    }
+  }
+
+  closeMenu(menu, icon, button) {
+    if (!menu || !icon) return;
+    
+    menu.classList.remove('block', 'opacity-100', 'translate-y-0');
+    menu.classList.add('hidden', 'opacity-0', 'translate-y-1');
+    icon.classList.remove('rotate-180');
+    icon.classList.add('rotate-0');
+    
+    // Remove active state from button
+    if (button) {
+      button.classList.remove('border-gray-400', 'bg-gray-100', 'text-gray-800');
+      button.classList.add('border-gray-300', 'bg-white');
+    }
+  }
+
+  closeAllMenus() {
+    const menus = ['ratingMenu', 'kotaMenu', 'kategoriMenu', 'hargaMenu'];
+    const icons = ['ratingIcon', 'kotaIcon', 'kategoriIcon', 'hargaIcon'];
+    const buttons = ['ratingBtn', 'kotaBtn', 'kategoriBtn', 'hargaBtn'];
+    
+    menus.forEach((menuId, index) => {
+      const menu = document.getElementById(menuId);
+      const icon = document.getElementById(icons[index]);
+      const button = document.getElementById(buttons[index]);
+      
+      if (menu && icon) {
+        this.closeMenu(menu, icon, button);
+      }
+    });
+    
+    this.activeMenu = null;
+  }
+
+  selectOption(button, text, value) {
+    if (!button) return;
+    
+    // Update button text to show selection
+    const originalText = button.id.replace('Btn', '');
+    const buttonText = button.querySelector('span') || button.firstChild;
+    
+    // Create new content for button
+    button.innerHTML = `
+      <span class="font-medium">${text}</span>
+      <svg class="w-4 h-4 ml-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    `;
+    
+    // Get the new icon element
+    const newIcon = button.querySelector('svg');
+    if (newIcon) {
+      newIcon.id = button.id.replace('Btn', 'Icon');
+      newIcon.classList.add('text-gray-400');
+    }
+    
+    // Add visual feedback for active filter
+    button.classList.add('bg-blue-50', 'border-blue-200', 'text-blue-600', 'font-medium');
+    button.classList.remove('text-gray-600', 'border-gray-300', 'hover:bg-gray-50');
+    
+    // Store the selected value as data attribute
+    button.setAttribute('data-selected', value);
+    
+    // console.log(`Filter selected: ${button.id} = ${value}`);
+  }
+
+  clearAllFilters() {
+    const buttons = ['ratingBtn', 'kotaBtn', 'kategoriBtn', 'hargaBtn'];
+    const defaultTexts = {
+      'ratingBtn': 'Rating',
+      'kotaBtn': 'Kota',
+      'kategoriBtn': 'Kategori',
+      'hargaBtn': 'Harga'
+    };
+    
+    buttons.forEach(btnId => {
+      const button = document.getElementById(btnId);
+      if (button) {
+        // Reset button text
+        button.innerHTML = `
+          ${defaultTexts[btnId]}
+          <svg id="${btnId.replace('Btn', 'Icon')}" class="w-4 h-4 ml-1 text-gray-400 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        `;
+        
+        // Reset button styling
+        button.classList.remove('bg-blue-50', 'border-blue-200', 'text-blue-600', 'font-medium');
+        button.classList.add('border-gray-300', 'bg-white', 'text-gray-600', 'hover:bg-gray-50');
+        
+        // Remove selected data
+        button.removeAttribute('data-selected');
+      }
+    });
+
+    showRestaurants();
+    
+    // console.log('All filters cleared');
+  }
+}
+
+// Initialize the filter dropdowns when DOM is loaded
+document.addEventListener('DOMContentLoaded', async() => {
+  await initial();
+  new FilterDropdown();
+});
