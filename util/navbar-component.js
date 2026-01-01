@@ -105,7 +105,7 @@ class Navbar extends HTMLElement {
                     </div>
                   </div>
                   <div class="flex md:hidden">
-                  <button class="bg-orange-500 text-white p-2 rounded border border-gray-50 cursor-pointer" data-id="showDropdownNavbar">
+                  <button aria-label="hamburger-menu" class="bg-orange-500 text-white p-2 rounded border border-gray-50 cursor-pointer" data-id="showDropdownNavbar">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-id="showDropdownNavbar"><path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" data-id="showDropdownNavbar"/></svg>
                   </button>
                     <div id="defaultPictShow">
@@ -229,7 +229,7 @@ class NavbarSearch extends HTMLElement {
                   <form action="hasilsearch.html"  method="get" class="flex w-full">
                       <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-white/70 group-hover:text-white transition-colors"></i>
                       <input type="text" placeholder="Cari restaurant favoritmu..." class="w-full py-3 pl-6 pr-6 rounded-2xl border border-white/30 bg-white/20 backdrop-blur-md text-white placeholder-white/70 focus:bg-white/30 focus:ring-2 focus:ring-white/50 outline-none transition-all shadow-inner" name="restaurant">
-                      <button class="bg-orange-500 ml-3 w-20 h-auto text-white rounded-2xl border border-gray-100 cursor-pointer">
+                      <button aria-label="hamburger-menu" class="bg-orange-500 ml-3 w-20 h-auto text-white rounded-2xl border border-gray-100 cursor-pointer">
                       Cari
                       </button>
                   </form>
@@ -247,7 +247,7 @@ class NavbarSearch extends HTMLElement {
                     </div>
                   </div>
                   <div class="flex md:hidden">
-                  <button class="bg-orange-500 text-white p-2 rounded border border-gray-50 cursor-pointer" data-id="showDropdownNavbar">
+                  <button aria-label="hamburger-menu" class="bg-orange-500 text-white p-2 rounded border border-gray-50 cursor-pointer" data-id="showDropdownNavbar">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-id="showDropdownNavbar"><path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" data-id="showDropdownNavbar"/></svg>
                   </button>
                   <div id="responsiveDefaultPictShow">
@@ -273,7 +273,7 @@ class NavbarSearch extends HTMLElement {
                     <form action="hasilsearch.html" method="get" class="flex w-full">
                       <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-white/70 group-hover:text-white transition-colors"></i>
                       <input type="text" placeholder="Cari restaurant favoritmu..." class="w-full py-3 pl-6 pr-6 rounded-2xl border border-white/30 bg-white/20 backdrop-blur-md text-white placeholder-white/70 focus:bg-white/30 focus:ring-2 focus:ring-white/50 outline-none transition-all shadow-inner" name="restaurant">
-                      <button class="bg-orange-500 ml-3 w-20 h-auto text-white rounded-2xl border border-gray-100 cursor-pointer" >
+                      <button aria-label="hamburger-menu" class="bg-orange-500 ml-3 w-20 h-auto text-white rounded-2xl border border-gray-100 cursor-pointer" >
                         Cari
                       </button>
                     </form>
