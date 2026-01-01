@@ -226,7 +226,7 @@ function submitReview() {
                         <div class="flex text-yellow-400">
                             ${starsHtml}
                         </div>
-                        <span class="text-xs text-gray-400">${date}</span>
+                        <span class="text-xs text-gray-600">${date}</span>
                     </div>
                     <p class="text-gray-800 text-xs md:text-sm">${text}</p>
                 </div>
@@ -310,9 +310,9 @@ const createDateFormat = (dateNow) => {
 }
 
 
-
 const initializeDetail = async () => {
     loadContentDeteail();
+    loadFavoriteMenu();
     loadReview();
 }
 
@@ -363,7 +363,7 @@ const loadReview = async() => {
         }
 
         let profilePict = `
-            <img src=" ${user[0].profile_pict}" class="w-8 h-8 md:w-10 md:h-10 rounded-full">
+            <img src=" ${user[0].profile_pict}" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="${name}">
         `;
 
         if (elm["isAnon"] != undefined && elm["isAnon"] == true || user[0].profile_pict == undefined){
@@ -388,7 +388,7 @@ const loadReview = async() => {
                             <div class="flex text-yellow-400">
                                 ${starsHtml}
                             </div>
-                            <span class="text-xs text-gray-400">${date}</span>
+                            <span class="text-xs text-gray-600">${date}</span>
                         </div>
                         <p class="text-gray-800 text-xs md:text-sm">${elm["comment"]}</p>
                     </div>
@@ -424,6 +424,7 @@ const loadContentDeteail = async () => {
     dataRestaurants = dataRestaurants["restaurants"].map(e => e).filter((data) => data["id"] == idRestaurant);
 
     let rating = JSON.parse(localStorage.getItem(STORAGE_KEY_RATING));
+    console.log(rating)
     rating = rating.filter((data) => data["id_restaurant"] == idRestaurant);
 
     res = await fetch("https://dummyjson.com/c/5a11-e1c4-4b69-bc14");
@@ -443,6 +444,35 @@ const loadContentDeteail = async () => {
 
     restaurantMaps.src = dataRestaurants[0].link_maps_embed;
     mapsRestaurant.href = dataRestaurants[0].link_maps;
+}
+
+const loadFavoriteMenu = async () => {
+    const parentnya = document.getElementById("favoriteMenu");
+
+    const res = await fetch("https://dummyjson.com/c/cce1-80b0-4a4e-ae66");
+    let dataMenu = await res.json(); 
+    dataMenu = dataMenu["top_menu"];
+
+    dataMenu = dataMenu.map(e => e).filter((data) => {
+        return data["id_restaurant"] == idRestaurant; 
+    });
+
+    Array.from(dataMenu).forEach((elm) => {
+        const div = document.createElement("div");
+
+        div.innerHTML = `
+         <div class="bg-gray-50 p-4 rounded-xl md:rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <div class="bg-gray-200 rounded-xl w-full aspect-square mb-3 md:mb-4 flex items-center justify-center overflow-hidden">
+                <img src="./Gambar/${elm["foto_menu"]}" alt="${elm["nama"]}" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-bold text-gray-900 text-base md:text-lg">${elm["nama"]}</h3>
+            <p class="text-gray-600 text-xs md:text-sm mb-2">${elm["category_menu"]}</p>
+            <p class="font-bold text-orange-700 text-sm md:text-base">Rp ${elm["harga"]}</p>
+        </div>
+        `;
+
+        parentnya.appendChild(div);
+    })
 }
 
 document.addEventListener('DOMContentLoaded', function() {
