@@ -3,7 +3,6 @@ let totalReviews = 0;
 let currentRating = 0;
 let reviewModal, mapModal, addReviewBtn;
 
-const STORAGE_KEY_COMMENTS = "restosan-reviews";
 const url = new URLSearchParams(window.location.search);
 const idRestaurant = parseInt(url.get("id"));
 const month = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agus", "Sept", "Oct", "Nov", "Des"];
@@ -176,7 +175,7 @@ function submitReview() {
 
     let dataReviews = localStorage.getItem(STORAGE_KEY_COMMENTS) == undefined ? []: JSON.parse(localStorage.getItem(STORAGE_KEY_COMMENTS));
 
-    const name = isAnon ? "Anonymous" : "User Baru";
+    const name = isAnon ? "Anonymous" : userLogin.nama;
     const date = new Date().toLocaleDateString('id-ID', {
         day: 'numeric',
         month: 'short',
@@ -332,15 +331,14 @@ const loadReview = async() => {
 
     let dataReviews = storageReview.map(e => e).filter((data) => data['id_restaurant'] == idRestaurant);
 
-    let res = await fetch("https://dummyjson.com/c/a5a2-2f98-424a-b7f1");
-    let dataUser = await res.json();
+    let dataUser = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
 
     if (dataReviews.length > 0){
         noReviews.classList.add("block");
     }
 
     Array.from(dataReviews).forEach(elm => {
-        let user = dataUser["users"].filter((data) => {
+        let user = dataUser.filter((data) => {
             return data["id"] == elm["id_user"]
         });
         
@@ -366,12 +364,20 @@ const loadReview = async() => {
             <img src=" ${user[0].profile_pict}" class="w-8 h-8 md:w-10 md:h-10 rounded-full" alt="${name}">
         `;
 
-        if (elm["isAnon"] != undefined && elm["isAnon"] == true || user[0].profile_pict == undefined){
-            profilePict = `
-                <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-600 flex items-center justify-center">
-                    <i class="fa-solid fa-user text-white text-xs md:text-sm"></i>
-                </div>
-            `;
+        if (user[0].profile_pict == undefined){
+            if (elm["isAnon"] != undefined && elm["isAnon"] == true){
+                profilePict = `
+                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-600 flex items-center justify-center">
+                        <i class="fa-solid fa-user text-white text-xs md:text-sm"></i>
+                    </div>
+                `;
+            } else {
+                  profilePict = `
+                    <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-300 flex items-center justify-center">
+                        <i class="fa-solid fa-user text-white text-xs md:text-sm"></i>
+                    </div>
+                `;
+            }
         }
         // susunan HTML review baru
         const newReviewHTML = `
@@ -424,7 +430,6 @@ const loadContentDeteail = async () => {
     dataRestaurants = dataRestaurants["restaurants"].map(e => e).filter((data) => data["id"] == idRestaurant);
 
     let rating = JSON.parse(localStorage.getItem(STORAGE_KEY_RATING));
-    console.log(rating)
     rating = rating.filter((data) => data["id_restaurant"] == idRestaurant);
 
     res = await fetch("https://dummyjson.com/c/5a11-e1c4-4b69-bc14");

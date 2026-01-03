@@ -98,7 +98,6 @@ const filterProcess = () => {
   const kategoriBtn = document.getElementById("kategoriBtn");
   const hargaBtn = document.getElementById("hargaBtn");
 
-  console.log(ratingBtn.dataset["selected"]);
 
   let obj = {
     idKota : kotaBtn.dataset["selected"],
@@ -179,9 +178,6 @@ const showRestaurants = async(params) => {
 
         dataRestaurants = tempDataRestaurant;
     }
-
-    console.log(dataRestaurants)
-
     
     
    if (dataRestaurants.length == 0){

@@ -1,4 +1,3 @@
-const STORAGE_KEY_USER_LOGIN = 'restosan-user-login';
 const userLogin = localStorage.getItem(STORAGE_KEY_USER_LOGIN);
 
 if(userLogin != undefined){
@@ -37,14 +36,12 @@ async function loginProses(){
       return;
   }
 
-
   // get data users
-  let res = await fetch("https://dummyjson.com/c/a5a2-2f98-424a-b7f1");
-  let dataUsers = await res.json();
-  dataUsers = dataUsers["users"].filter((data) => {
+  let dataUsers = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
+  dataUsers = dataUsers.filter((data) => {
     return (
       (data["email"].includes(emailInput)) &&
-      (data["password"].includes(passInput))
+      (data["password"].includes(MD5(unescape(encodeURIComponent(passInput)))))
     );
   });
 
@@ -57,7 +54,8 @@ async function loginProses(){
     id : dataUsers[0].id,
     email : dataUsers[0].email,
     nama : dataUsers[0].nama,
-    profile_pict: dataUsers[0].profile_pict
+    profile_pict: dataUsers[0].profile_pict,
+    password: dataUsers[0].password
   };
 
   localStorage.setItem(STORAGE_KEY_USER_LOGIN, JSON.stringify(obj));
@@ -83,7 +81,15 @@ function registerProsses(){
     return;
   }
 
-  const idUser = Math.floor(8 + Math.random() * 100);
+
+    let isIdused = [];
+    let idUser = 0;
+    let dataUsers = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
+
+    do{
+        idUser = Math.floor(9 + Math.random() * 100);
+        isIdused = dataUsers.filter(data => data["id"] == idUser);
+    }while(isIdused.length > 0);
 
   let obj = {
     id: idUser,
@@ -92,7 +98,10 @@ function registerProsses(){
     password: MD5(unescape(encodeURIComponent(passInput)))
   }
 
+  dataUsers.push(obj);
+
   localStorage.setItem(STORAGE_KEY_USER_LOGIN, JSON.stringify(obj));
+  localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(dataUsers));
   window.location.href = "index.html";
 }
 
