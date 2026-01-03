@@ -232,9 +232,9 @@ const showRestaurants = async(params) => {
         article.innerHTML = `
         <div class="h-48 bg-gray-200 relative group/slider">
             <div class="slider-container flex overflow-x-auto snap-x snap-mandatory h-full w-full scroll-smooth">
-              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][0]}" alt="Steak 1" class="w-full h-full object-cover shrink-0 snap-center" />
-              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][1]}" alt="Steak 2" class="w-full h-full object-cover shrink-0 snap-center" />
-              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][2]}" alt="Steak 3" class="w-full h-full object-cover shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][0]}" alt="${elm["nama"]}" class="w-full h-full object-cover shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][1]}" alt="${elm["nama"]}" class="w-full h-full object-cover shrink-0 snap-center" />
+              <img src="./Gambar/RestaurantImage/${elm["nama"]}/${elm["foto"][2]}" alt="${elm["nama"]}" class="w-full h-full object-cover shrink-0 snap-center" />
             </div>
             <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold shadow-sm flex items-center gap-1 z-10"><i class="fa-solid fa-star text-yellow-400"></i> ${rating[0].rating}</div>
             <button
@@ -252,7 +252,7 @@ const showRestaurants = async(params) => {
           </div>
           <div class="p-5">
             <h3 class="font-bold text-gray-800 text-lg mb-1 group-hover:text-orange-600 transition-colors">${namaRestaurant}</h3>
-            <p class="text-xs text-gray-600 font-medium mb-3 uppercase tracking-wide">${category[0].category}</p>
+            <p class="text-xs text-gray-500 font-medium mb-3 uppercase tracking-wide">${category[0].category}</p>
             <div class="flex items-center justify-between mb-5">
               <div class="flex items-center gap-1 text-xs text-gray-500">
                 <i class="fa-solid fa-location-dot text-red-400"></i>
@@ -263,7 +263,7 @@ const showRestaurants = async(params) => {
                 <span>${price[0].price_range}</span>
               </div>
             </div>
-            <button class="cursor-pointer w-full py-2.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold shadow-md hover:shadow-lg transform active:scale-95 transition-all" data-id="viewDetails" data-value="${elm["id"]}">View Details</button>
+            <button class="cursor-pointer w-full py-2.5 rounded-xl bg-red-600 hover:bg-orange-600 text-white text-sm font-semibold shadow-md hover:shadow-lg transform active:scale-95 transition-all" data-id="viewDetails" data-value="${elm["id"]}">View Details</button>
           </div>
         `;
 
