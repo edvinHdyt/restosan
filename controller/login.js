@@ -46,8 +46,8 @@ async function loginProses(){
   });
 
   if(dataUsers.length == 0){
-      showAlertModals("Email atau password salah, silahkan coba lagi!");
-      return;
+    showAlertModals("Email atau password salah, silahkan coba lagi!");
+    return;
   }
 
   let obj = {
@@ -85,6 +85,14 @@ function registerProsses(){
     let isIdused = [];
     let idUser = 0;
     let dataUsers = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
+
+    let isEmailUsed =  dataUsers.filter(data => data["email"] == emailInput);
+
+    if (isEmailUsed.length > 0){
+      showAlertModals("Email sudah digunakan!");
+    
+      return;
+    }
 
     do{
         idUser = Math.floor(9 + Math.random() * 100);
