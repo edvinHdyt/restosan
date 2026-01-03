@@ -84,7 +84,7 @@ Restosan adalah sebuah website yang membantu pengguna menemukan berbagai macam r
 
 ## 4. Struktur Halaman (Sitemap)
 
-![Sitemap Restosan](image/Hierarki.png)
+![Sitemap Restosan](docs/image/Hierarki.png)
 
 ---
 
@@ -92,73 +92,73 @@ Restosan adalah sebuah website yang membantu pengguna menemukan berbagai macam r
 
 ### 5.1 Dashboard
 **Mobile**  
-![Dashboard Mobile](image/DashboardMobile.png)
+![Dashboard Mobile](docs/image/DashboardMobile.png)
 
 **Tablet**  
-![Dashboard Tablet](image/DashboardTablet.png)
+![Dashboard Tablet](docs/image/DashboardTablet.png)
 
 **Desktop**  
-![Dashboard Desktop](image/DashboardDekstop.png)
+![Dashboard Desktop](docs/image/DashboardDekstop.png)
 
 ---
 
 ### 5.2 Detail Restoran
 **Mobile**  
-![Detail Mobile](image/DetailMobile.png)
+![Detail Mobile](docs/image/DetailMobile.png)
 
 **Tablet**  
-![Detail Tablet](image/DetailTablet.png)
+![Detail Tablet](docs/image/DetailTablet.png)
 
 **Desktop**  
-![Detail Desktop](image/DetailDekstop.png)
+![Detail Desktop](docs/image/DetailDekstop.png)
 
 ---
 
 ### 5.3 Hasil Pencarian
 **Mobile**  
-![Hasil Pencarian Mobile](image/HasilSearchMobile.png)
+![Hasil Pencarian Mobile](docs/image/HasilSearchMobile.png)
 
 **Tablet**  
-![Hasil Pencarian Tablet](image/HasilSearchTablet.png)
+![Hasil Pencarian Tablet](docs/image/HasilSearchTablet.png)
 
 **Desktop**  
-![Hasil Pencarian Desktop](image/HasilSearchDekstop.png)
+![Hasil Pencarian Desktop](docs/image/HasilSearchDekstop.png)
 
 ---
 
 ### 5.4 Login
 **Mobile**  
-![Login Mobile](image/LoginMobile.png)
+![Login Mobile](docs/image/LoginMobile.png)
 
 **Tablet**  
-![Login Tablet](image/LoginTablet.png)
+![Login Tablet](docs/image/LoginTablet.png)
 
 **Desktop**  
-![Login Desktop](image/LoginDekstop.png)
+![Login Desktop](docs/image/LoginDekstop.png)
 
 ---
 
 ### 5.5 Register
 **Mobile**  
-![Register Mobile](image/RegisterMobile.png)
+![Register Mobile](docs/image/RegisterMobile.png)
 
 **Tablet**  
-![Register Tablet](image/RegisterTablet.png)
+![Register Tablet](docs/image/RegisterTablet.png)
 
 **Desktop**  
-![Register Desktop](image/RegisterDekstop.png)
+![Register Desktop](docs/image/RegisterDekstop.png)
 
 ---
 
 ### 5.6 Profile
 **Mobile**  
-![Profile Mobile](image/ProfileMobile.png)
+![Profile Mobile](docs/image/ProfileMobile.png)
 
 **Tablet**  
-![Profile Tablet](image/ProfileTablet.png)
+![Profile Tablet](docs/image/ProfileTablet.png)
 
 **Desktop**  
-![Profile Desktop](image/ProfileDekstop.png)
+![Profile Desktop](docs/image/ProfileDekstop.png)
 
 ---
 
@@ -166,12 +166,25 @@ Restosan adalah sebuah website yang membantu pengguna menemukan berbagai macam r
 
 Berikut merupakan hasil pengecekan aksesibilitas pada website Restosan:
 
-![Aksesibilitas](image/Aksesibilitas.png)
+**Dashboard**  
+![Dashboard Accessibility](docs/image/AksesibilitasDashboard.png)
+
+**View Details**  
+![View Details Accessibility](docs/image/AksesibilitasDetails.png)
+
+**Login**  
+![Login Accessibility](docs/image/AksesibilitasLogin.png)
+
+**View Register**  
+![Register Accessibility](docs/image/AksesibilitasRegister.png)
+
+**Profile**  
+![Profile Accessibility](docs/image/AksesibilitasProfile.png)
 
 ---
 
 ## Penutup
 
-Website **Restosan** dibuat sebagai bagian dari Tugas Besar Praktikum Desain Web dengan tujuan menerapkan konsep frontend modern, desain responsif, serta aksesibilitas website. Melalui proyek ini, diharapkan pengguna dapat dengan mudah menemukan restoran yang sesuai dengan kebutuhan dan preferensi mereka.
+Website **Restosan** dibuat sebagai bagian dari Tugas Besar Praktikum Desain Web dengan tujuan menerapkan konsep frontend modern, desain responsif, serta aksesibilitas website. Melalui proyek ini, diharapkan pengguna dapat dengan mudah menemukan restoran yang sesuai dengan kebutuhan dan preferensi mereka. TERIMAKASIH!
 
 ---
