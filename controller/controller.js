@@ -1,5 +1,8 @@
 const STORAGE_KEY_RATING = 'restosan-ratings';
 const STORAGE_KEY_USER_LOGIN = 'restosan-user-login';
+const STORAGE_KEY_USER = 'restosan-users';
+const STORAGE_KEY_COMMENTS = "restosan-reviews";
+
 document.addEventListener("click", function(){
   const strId = event.target.dataset['id'];
 
@@ -118,6 +121,61 @@ function manipulateDropdownProfile(){
   }
 }
 
+
+async function initUsers() {
+    // console.log(localStorage.getItem(STORAGE_KEY_USER))
+    if (localStorage.getItem(STORAGE_KEY_USER) === null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/f0d0-1f34-4c32-b63c");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.users;
+
+            localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
+async function initReview() {
+    // console.log(localStorage.getItem(STORAGE_KEY_USER))
+    if (localStorage.getItem(STORAGE_KEY_COMMENTS) === null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/7d70-3b31-41a3-a8d6");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.reviews;
+
+            localStorage.setItem(STORAGE_KEY_COMMENTS, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
+async function initRatings() {
+    // console.log(localStorage.getItem(STORAGE_KEY_USER))
+    if (localStorage.getItem(STORAGE_KEY_RATING) === null) {
+        try {
+            const res = await fetch("https://dummyjson.com/c/74c6-605d-44b7-86a8");
+            const data = await res.json();
+            // Sesuai catatanmu, properti API-nya adalah "archievest"
+            let initialData = data.ratings;
+
+            localStorage.setItem(STORAGE_KEY_RATING, JSON.stringify(initialData));
+            // console.log("Data awal berhasil dimuat ke LocalStorage");
+        } catch (error) {
+            console.error("Gagal mengambil data API:", error);
+        }
+    }
+}
+
+initUsers();
+initReview();
+initRatings();
 
 // document.getElementById('searchInput').addEventListener('keypress', function (e) {
 //   if (e.key === "Enter") {

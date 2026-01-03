@@ -1,4 +1,3 @@
-let STORAGE_KEY_USER_LOGIN = 'restosan-user-login';
 let userLogin = localStorage.getItem(STORAGE_KEY_USER_LOGIN);
 userLogin = userLogin == undefined ? userLogin : JSON.parse(userLogin);
 
@@ -62,9 +61,16 @@ function saveChnagePassword(){
     return;
   }
 
+  let dataUser = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
 
   userLogin.password = MD5(unescape(encodeURIComponent(pass)));
+
+  let index = dataUser.map(e => e.id).indexOf(userLogin.id);
+    
+  dataUser[index].password = userLogin.password;
+
   localStorage.setItem(STORAGE_KEY_USER_LOGIN, JSON.stringify(userLogin));
+  localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(dataUser));
   closeAlertChangePass();
   showAlertModals("Password berhasil diubah!");
 }
@@ -78,13 +84,21 @@ function saveChnageProfile(){
       return;
     }
 
+    let dataUser = JSON.parse(localStorage.getItem(STORAGE_KEY_USER));
+
     userLogin.nama = name;
     userLogin.email = email;
     if(newProfileImg != undefined){
       userLogin.profile_pict = newProfileImg;
     }
 
+
+    let index = dataUser.map(e => e.id).indexOf(userLogin.id);
+    
+    dataUser[index] = userLogin;
+
     localStorage.setItem(STORAGE_KEY_USER_LOGIN, JSON.stringify(userLogin));
+    localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(dataUser));
     closeAlertConfChange();
     showAlertModals("Profile berhasil diubah!");
 }
