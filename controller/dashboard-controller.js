@@ -252,7 +252,7 @@ const showRestaurants = async(params) => {
           </div>
           <div class="p-5">
             <h3 class="font-bold text-gray-800 text-lg mb-1 group-hover:text-orange-600 transition-colors">${namaRestaurant}</h3>
-            <p class="text-xs text-gray-400 font-medium mb-3 uppercase tracking-wide">${category[0].category}</p>
+            <p class="text-xs text-gray-600 font-medium mb-3 uppercase tracking-wide">${category[0].category}</p>
             <div class="flex items-center justify-between mb-5">
               <div class="flex items-center gap-1 text-xs text-gray-500">
                 <i class="fa-solid fa-location-dot text-red-400"></i>

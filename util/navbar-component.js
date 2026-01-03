@@ -105,7 +105,7 @@ class Navbar extends HTMLElement {
                     </div>
                   </div>
                   <div class="flex md:hidden">
-                  <button class="bg-orange-500 text-white p-2 rounded border border-gray-50 cursor-pointer" data-id="showDropdownNavbar">
+                  <button aria-label="hamburger-menu" class="bg-orange-500 text-white p-2 rounded border border-gray-50 cursor-pointer" data-id="showDropdownNavbar">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-id="showDropdownNavbar"><path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z" data-id="showDropdownNavbar"/></svg>
                   </button>
                     <div id="defaultPictShow">
